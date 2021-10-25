@@ -1,0 +1,14 @@
+@import "font";
+
+.card {
+    width: 90vh;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: darkblue;
+    h1 {
+        font-family: zillaslab;
+    }
+}
