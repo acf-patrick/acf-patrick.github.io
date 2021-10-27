@@ -10,13 +10,68 @@
   font-family: pacifico;
   src: url("assets/fonts/Pacifico-Regular.ttf"); }
 
+@font-face {
+  font-family: roboto;
+  src: url("assets/fonts/Roboto-Regular.ttf"); }
+
+body {
+  background: url("assets/images/card-bg.jpg") center no-repeat; }
+
 .card {
+  display: grid;
+  grid-template: 75% 25% / 1fr 1fr;
+  grid-template-areas: "greeting photo";
+  font-family: ubuntu, roboto, sans-serif;
+  overflow: hidden;
   width: 90vh;
-  height: 80vh;
+  min-width: 200px;
+  height: 60vh;
   margin: auto;
-  margin-top: 10vh;
-  border: 1px solid white;
+  margin-top: 20vh;
+  border: 1px solid #3f6494;
   border-radius: 15px;
-  background-color: darkblue; }
-  .card h1 {
-    font-family: zillaslab; }
+  box-shadow: 0px 5px 20px black;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); }
+  .card__greeting {
+    position: relative;
+    grid-area: greeting;
+    display: flex; }
+    .card__greeting div {
+      align-self: center;
+      position: absolute;
+      left: 30px; }
+    .card__greeting h1 {
+      font-family: pacifico; }
+  .card__photo {
+    grid-area: photo;
+    background-color: #010216;
+    border-radius: 15rem;
+    border: 1px solid #030647;
+    position: relative;
+    top: -60px;
+    right: -60px; }
+  .card__nav {
+    display: grid;
+    grid-area: greeting-end / greeting-start / span 1 / span 2;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: ". about skills projects";
+    place-items: center; }
+    .card__nav .about {
+      grid-area: about; }
+    .card__nav .skills {
+      grid-area: skills; }
+    .card__nav .projects {
+      grid-area: projects; }
+    .card__nav a {
+      text-decoration: none;
+      font-weight: bold;
+      background: linear-gradient(to right, yellow, red, indigo);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent; }
+      .card__nav a:hover {
+        background: linear-gradient(to left, yellow, red, indigo);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; }
