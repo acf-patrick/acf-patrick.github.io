@@ -60,7 +60,7 @@ body {
         .card__greeting > div:hover .firstname {
           color: darkslategray; }
         .card__greeting > div:hover .name {
-          color: purple; }
+          color: #9e009e; }
     .card__greeting span {
       font-size: 0.8em;
       color: #323232; }
@@ -73,7 +73,7 @@ body {
       margin-bottom: 0px;
       transition: color 400ms ease-in; }
     .card__greeting .firstname {
-      color: purple;
+      color: #9e009e;
       margin-top: 0px;
       transition: color 400ms ease-in; }
     .card__greeting .github {
@@ -83,7 +83,7 @@ body {
       transform: translateX(30%); }
       .card__greeting .github a {
         font-size: 0.7em;
-        color: black;
+        color: cyan;
         text-decoration: none;
         opacity: 0.4;
         transition: opacity 300ms ease-in-out; }
@@ -117,7 +117,7 @@ body {
     .card__nav a {
       text-decoration: none;
       font-weight: bold;
-      background: linear-gradient(to left, cyan, indigo, blue);
+      background: linear-gradient(to left, cyan, #6000a5, #3535ff);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;

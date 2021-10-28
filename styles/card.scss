@@ -3,7 +3,7 @@
 $blur-extent: 12px;
 $photo-bg-color: #010216;
 $name-color: darkslategray;
-$firstname-color: purple;
+$firstname-color: rgb(158, 0, 158);
 @function bg-color($opacity) {
     @return rgba(155, 155, 255, $opacity);
 }
@@ -70,7 +70,7 @@ body {
         .github {
             a {
                 font-size: 0.7em;
-                color: black;
+                color: cyan;
                 text-decoration: none;
                 opacity: 0.4;
                 transition: opacity 300ms ease-in-out;
@@ -113,7 +113,7 @@ body {
         }
         a {
             @mixin clear-bg($direction) {
-                background: linear-gradient($direction, cyan, indigo, blue);
+                background: linear-gradient($direction, cyan, rgb(96, 0, 165), rgb(53, 53, 255));
                 -webkit-background-clip: text;
                 background-clip: text; 
                 -webkit-text-fill-color: transparent;
