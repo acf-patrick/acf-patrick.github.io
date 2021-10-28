@@ -23,7 +23,8 @@
   src: url("assets/fonts/Roboto-Light.ttf"); }
 
 body {
-  background: url("assets/images/card-bg.jpg") center no-repeat; }
+  background: url("assets/images/card-bg.jpg") center no-repeat;
+  background-size: cover; }
 
 .card {
   display: grid;
@@ -31,16 +32,20 @@ body {
   grid-template-areas: "greeting photo";
   font-family: ubuntu, roboto, sans-serif;
   overflow: hidden;
-  width: 90vh;
-  min-width: 200px;
-  height: 60vh;
-  margin: auto;
-  margin-top: 20vh;
+  width: 790px;
+  height: 530px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: 1px solid #3f6494;
   border-radius: 15px;
   box-shadow: 0px 5px 20px black;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); }
+  @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .card {
+      background-color: rgba(155, 155, 255, 0.3); } }
   .card__greeting {
     grid-area: greeting;
     display: grid; }
@@ -73,6 +78,7 @@ body {
       transition: color 400ms ease-in; }
     .card__greeting .github {
       justify-self: start;
+      align-self: center;
       font-family: ubuntu-monospace;
       transform: translateX(30%); }
       .card__greeting .github a {
@@ -96,6 +102,7 @@ body {
     top: -60px;
     right: -60px; }
   .card__nav {
+    background-color: rgba(155, 155, 255, 0.1);
     display: grid;
     grid-area: greeting-end / greeting-start / span 1 / span 2;
     grid-template-columns: repeat(4, 1fr);

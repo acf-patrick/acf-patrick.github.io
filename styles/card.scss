@@ -1,13 +1,16 @@
 @import "font";
 
-$card-height: 60vh;
 $blur-extent: 12px;
 $photo-bg-color: #010216;
 $name-color: darkslategray;
 $firstname-color: purple;
+@function bg-color($opacity) {
+    @return rgba(155, 155, 255, $opacity);
+}
 
 body {
     background: url("assets/images/card-bg.jpg") center no-repeat;
+    background-size: cover;
 }
 
 .card {
@@ -16,16 +19,21 @@ body {
     grid-template-areas: "greeting photo";
     font-family: ubuntu, roboto, sans-serif;
     overflow: hidden;
-    width: 90vh;
-    min-width: 200px;
-    height: $card-height;
-    margin: auto;
-    margin-top: (100vh - 60vh) / 2;
+    width: 790px;
+    height: 530px;
+    // margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 1px solid #3f6494;
     border-radius: 15px;
     box-shadow: 0px 5px 20px black;
     backdrop-filter: blur($blur-extent);
     -webkit-backdrop-filter: blur($blur-extent);
+    @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+        background-color: bg-color(0.3);
+    }
     &__greeting {
         grid-area: greeting;
         display: grid;
@@ -76,6 +84,7 @@ body {
                 }
             }
             justify-self: start;
+            align-self: center;
             font-family: ubuntu-monospace;
             transform: translateX(30%);
         }
@@ -90,6 +99,7 @@ body {
         right: -60px;
     }
     &__nav {
+        background-color: bg-color(0.1);
         display: grid;
         grid-area: greeting-end / greeting-start / span 1 / span 2;
         grid-template-columns: repeat(4, 1fr);
