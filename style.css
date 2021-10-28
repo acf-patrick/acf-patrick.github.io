@@ -7,6 +7,10 @@
   src: url("assets/fonts/Ubuntu-R.ttf"); }
 
 @font-face {
+  font-family: ubuntu-monospace;
+  src: url("assets/fonts/UbuntuMono-R.ttf"); }
+
+@font-face {
   font-family: pacifico;
   src: url("assets/fonts/Pacifico-Regular.ttf"); }
 
@@ -14,12 +18,16 @@
   font-family: roboto;
   src: url("assets/fonts/Roboto-Regular.ttf"); }
 
+@font-face {
+  font-family: roboto-light;
+  src: url("assets/fonts/Roboto-Light.ttf"); }
+
 body {
   background: url("assets/images/card-bg.jpg") center no-repeat; }
 
 .card {
   display: grid;
-  grid-template: 75% 25% / 1fr 1fr;
+  grid-template: 80% 20% / 1fr 1fr;
   grid-template-areas: "greeting photo";
   font-family: ubuntu, roboto, sans-serif;
   overflow: hidden;
@@ -34,15 +42,51 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); }
   .card__greeting {
-    position: relative;
     grid-area: greeting;
-    display: flex; }
-    .card__greeting div {
-      align-self: center;
-      position: absolute;
-      left: 30px; }
+    display: grid; }
+    .card__greeting > div {
+      /* names */
+      font-family: roboto;
+      font-size: 1.2em;
+      color: #213838;
+      place-self: end; }
+      .card__greeting > div:hover {
+        cursor: default; }
+        .card__greeting > div:hover .firstname {
+          color: darkslategray; }
+        .card__greeting > div:hover .name {
+          color: purple; }
+    .card__greeting span {
+      font-size: 0.8em;
+      color: #323232; }
     .card__greeting h1 {
-      font-family: pacifico; }
+      font-family: roboto-light;
+      font-size: 2.2em;
+      letter-spacing: 2px; }
+    .card__greeting .name {
+      color: darkslategray;
+      margin-bottom: 0px;
+      transition: color 400ms ease-in; }
+    .card__greeting .firstname {
+      color: purple;
+      margin-top: 0px;
+      transition: color 400ms ease-in; }
+    .card__greeting .github {
+      justify-self: start;
+      font-family: ubuntu-monospace;
+      transform: translateX(30%); }
+      .card__greeting .github a {
+        font-size: 0.7em;
+        color: black;
+        text-decoration: none;
+        opacity: 0.4;
+        transition: opacity 300ms ease-in-out; }
+        .card__greeting .github a:hover {
+          opacity: 1; }
+        .card__greeting .github a img {
+          position: relative;
+          top: 5px;
+          left: -5px; }
   .card__photo {
     grid-area: photo;
     background-color: #010216;
@@ -66,12 +110,10 @@ body {
     .card__nav a {
       text-decoration: none;
       font-weight: bold;
-      background: linear-gradient(to right, yellow, red, indigo);
+      background: linear-gradient(to left, cyan, indigo, blue);
       -webkit-background-clip: text;
       background-clip: text;
-      -webkit-text-fill-color: transparent; }
+      -webkit-text-fill-color: transparent;
+      transition: text-shadow 200ms ease-out; }
       .card__nav a:hover {
-        background: linear-gradient(to left, yellow, red, indigo);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent; }
+        text-shadow: 1px 1px 2px cyan; }

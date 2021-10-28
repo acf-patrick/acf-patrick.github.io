@@ -3,6 +3,8 @@
 $card-height: 60vh;
 $blur-extent: 12px;
 $photo-bg-color: #010216;
+$name-color: darkslategray;
+$firstname-color: purple;
 
 body {
     background: url("assets/images/card-bg.jpg") center no-repeat;
@@ -10,7 +12,7 @@ body {
 
 .card {
     display: grid;
-    grid-template: 75% 25% / 1fr 1fr;
+    grid-template: 80% 20% / 1fr 1fr;
     grid-template-areas: "greeting photo";
     font-family: ubuntu, roboto, sans-serif;
     overflow: hidden;
@@ -25,16 +27,57 @@ body {
     backdrop-filter: blur($blur-extent);
     -webkit-backdrop-filter: blur($blur-extent);
     &__greeting {
-        position: relative;
         grid-area: greeting;
-        display: flex;
-        div {
-            align-self: center;
-            position: absolute;
-            left: 25px;
+        display: grid;
+        > div { /* names */
+            font-family: roboto;
+            font-size: 1.2em;
+            color: rgb(33, 56, 56);
+            place-self: end;
+            &:hover {
+                cursor: default;
+                .firstname { color: $name-color; }
+                .name { color: $firstname-color }
+            }
+        }
+        span {
+            font-size: 0.8em;
+            color: rgb(50, 50, 50);
         }
         h1 {
-            font-family: pacifico;
+            font-family: roboto-light;
+            font-size: 2.2em;
+            letter-spacing: 2px;
+        }
+        .name {
+            color: $name-color;
+            margin-bottom: 0px;
+            transition: color 400ms ease-in;
+        }
+        .firstname {
+            color: $firstname-color;
+            margin-top: 0px;
+            transition: color 400ms ease-in;
+        }
+        .github {
+            a {
+                font-size: 0.7em;
+                color: black;
+                text-decoration: none;
+                opacity: 0.4;
+                transition: opacity 300ms ease-in-out;
+                &:hover {
+                    opacity: 1;
+                }
+                img {
+                    position: relative;
+                    top: 5px;
+                    left: -5px;
+                }
+            }
+            justify-self: start;
+            font-family: ubuntu-monospace;
+            transform: translateX(30%);
         }
     }
     &__photo {
@@ -60,16 +103,19 @@ body {
         }
         a {
             @mixin clear-bg($direction) {
-                background: linear-gradient($direction, yellow, red, indigo);
+                background: linear-gradient($direction, cyan, indigo, blue);
                 -webkit-background-clip: text;
                 background-clip: text; 
                 -webkit-text-fill-color: transparent;
             }
             text-decoration: none;
             font-weight: bold;
-            @include clear-bg(to right);
+            @include clear-bg(to left);
+            // text-shadow: none;
+            transition: text-shadow 200ms ease-out;
             &:hover {
-                @include clear-bg(to left);
+                // @include clear-bg(to left);
+                text-shadow: 1px 1px 2px cyan;
             }
         }
     }

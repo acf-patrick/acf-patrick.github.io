@@ -9,6 +9,11 @@
 }
 
 @font-face {
+    font-family: ubuntu-monospace;
+    src: url("assets/fonts/UbuntuMono-R.ttf");
+}
+
+@font-face {
     font-family: pacifico;
     src: url("assets/fonts/Pacifico-Regular.ttf");
 }
@@ -16,4 +21,9 @@
 @font-face {
     font-family: roboto;
     src: url("assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url("assets/fonts/Roboto-Light.ttf");
 }
