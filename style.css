@@ -1,6 +1,6 @@
 @font-face {
   font-family: zillaslab;
-  src: url("assets/fonts/ZillaSlab-SemiBold.ttf"); }
+  src: url("assets/fonts/ZillaSlab-Regular.ttf"); }
 
 @font-face {
   font-family: ubuntu;
@@ -23,12 +23,15 @@
   src: url("assets/fonts/Roboto-Light.ttf"); }
 
 body {
-  background: url("assets/images/card-bg.jpg") center no-repeat;
+  background: url("assets/images/card-bg.jpg") center no-repeat fixed;
   background-size: cover; }
+
+.card-container {
+  height: 100vh; }
 
 .card {
   display: grid;
-  grid-template: 80% 20% / 1fr 1fr;
+  grid-template: 80% 20% / 53% 47%;
   grid-template-areas: "greeting photo";
   font-family: ubuntu, roboto, sans-serif;
   overflow: hidden;
@@ -39,41 +42,39 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid #3f6494;
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 0px 5px 20px black;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); }
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px); }
   @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .card {
       background-color: rgba(155, 155, 255, 0.3); } }
   .card__greeting {
     grid-area: greeting;
     display: grid; }
-    .card__greeting > div {
-      /* names */
-      font-family: roboto;
+    .card__greeting .greeting {
+      border-bottom: 2px solid #ff5eff;
       font-size: 1.2em;
-      color: #213838;
       place-self: end; }
-      .card__greeting > div:hover {
+      .card__greeting .greeting:hover {
         cursor: default; }
-        .card__greeting > div:hover .firstname {
-          color: darkslategray; }
-        .card__greeting > div:hover .name {
-          color: #9e009e; }
+        .card__greeting .greeting:hover .firstname {
+          color: #101a1a; }
+        .card__greeting .greeting:hover .name {
+          color: #5e005e; }
     .card__greeting span {
       font-size: 0.8em;
-      color: #323232; }
+      color: rgba(0, 2, 22, 0.7); }
     .card__greeting h1 {
-      font-family: roboto-light;
+      font-family: zillaslab;
       font-size: 2.2em;
       letter-spacing: 2px; }
     .card__greeting .name {
-      color: darkslategray;
+      color: #101a1a;
       margin-bottom: 0px;
       transition: color 400ms ease-in; }
     .card__greeting .firstname {
-      color: #9e009e;
+      color: #5e005e;
       margin-top: 0px;
       transition: color 400ms ease-in; }
     .card__greeting .github {
@@ -82,6 +83,7 @@ body {
       font-family: ubuntu-monospace;
       transform: translateX(30%); }
       .card__greeting .github a {
+        font-family: roboto;
         font-size: 0.7em;
         color: cyan;
         text-decoration: none;
@@ -94,13 +96,14 @@ body {
           top: 5px;
           left: -5px; }
   .card__photo {
+    width: 424px;
     grid-area: photo;
-    background-color: #010216;
+    background-color: rgba(0, 2, 22, 0.7);
     border-radius: 15rem;
-    border: 1px solid #030647;
+    border: 1px solid rgba(0, 7, 73, 0.7);
     position: relative;
     top: -60px;
-    right: -60px; }
+    right: -50px; }
   .card__nav {
     background-color: rgba(155, 155, 255, 0.1);
     display: grid;
