@@ -40,17 +40,24 @@ body {
     }
     &__greeting {
         grid-area: greeting;
-        display: grid;
-
-        .greeting {
-            border-bottom: 2px solid lighten($firstname-color, 50%);
-            font-size: 1.2em;
-            place-self: end;
-            &:hover {
-                cursor: default;
-                .firstname { color: $name-color; }
-                .name { color: $firstname-color }
+        font-size: 1.2em;
+        place-self: center;
+        // border-bottom: 2px solid lighten($firstname-color, 50%);
+        &:hover {
+            cursor: default;
+            .firstname { color: $name-color; }
+            .name { color: $firstname-color }
+            &::after {
+                width: 100%;
             }
+        }
+        &::after {
+            content: "";
+            display: block;
+            background-color: white;
+            height: 2px;
+            width: 0;
+            transition: width 500ms ease-out;
         }
         span {
             font-size: 0.8em;
@@ -70,28 +77,6 @@ body {
             color: $firstname-color;
             margin-top: 0px;
             transition: color 400ms ease-in;
-        }
-        .github {
-            a {
-                font-family: roboto;
-                font-size: 0.7em;
-                color: cyan;
-                text-decoration: none;
-                opacity: 0.4;
-                transition: opacity 300ms ease-in-out;
-                &:hover {
-                    opacity: 1;
-                }
-                img {
-                    position: relative;
-                    top: 5px;
-                    left: -5px;
-                }
-            }
-            justify-self: start;
-            align-self: center;
-            font-family: ubuntu-monospace;
-            transform: translateX(30%);
         }
     }
     &__photo {

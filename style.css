@@ -51,17 +51,23 @@ body {
       background-color: rgba(155, 155, 255, 0.3); } }
   .card__greeting {
     grid-area: greeting;
-    display: grid; }
-    .card__greeting .greeting {
-      border-bottom: 2px solid #ff5eff;
-      font-size: 1.2em;
-      place-self: end; }
-      .card__greeting .greeting:hover {
-        cursor: default; }
-        .card__greeting .greeting:hover .firstname {
-          color: #101a1a; }
-        .card__greeting .greeting:hover .name {
-          color: #5e005e; }
+    font-size: 1.2em;
+    place-self: center; }
+    .card__greeting:hover {
+      cursor: default; }
+      .card__greeting:hover .firstname {
+        color: #101a1a; }
+      .card__greeting:hover .name {
+        color: #5e005e; }
+      .card__greeting:hover::after {
+        width: 100%; }
+    .card__greeting::after {
+      content: "";
+      display: block;
+      background-color: white;
+      height: 2px;
+      width: 0;
+      transition: width 500ms ease-out; }
     .card__greeting span {
       font-size: 0.8em;
       color: rgba(0, 2, 22, 0.7); }
@@ -77,24 +83,6 @@ body {
       color: #5e005e;
       margin-top: 0px;
       transition: color 400ms ease-in; }
-    .card__greeting .github {
-      justify-self: start;
-      align-self: center;
-      font-family: ubuntu-monospace;
-      transform: translateX(30%); }
-      .card__greeting .github a {
-        font-family: roboto;
-        font-size: 0.7em;
-        color: cyan;
-        text-decoration: none;
-        opacity: 0.4;
-        transition: opacity 300ms ease-in-out; }
-        .card__greeting .github a:hover {
-          opacity: 1; }
-        .card__greeting .github a img {
-          position: relative;
-          top: 5px;
-          left: -5px; }
   .card__photo {
     width: 424px;
     grid-area: photo;
