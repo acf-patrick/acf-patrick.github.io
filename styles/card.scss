@@ -4,32 +4,54 @@ $blur-extent: 7px;
 $photo-bg-color: rgba(0, 2, 22, 0.7);
 $name-color: rgb(16, 26, 26);
 $firstname-color: rgb(94, 0, 94);
+$card-width: 790px;
+
 @function bg-color($opacity) {
     @return rgba(155, 155, 255, $opacity);
 }
 
-body {
-    background: url("assets/images/card-bg.jpg") center no-repeat fixed;
-    background-size: cover;
+@keyframes fill {
+    from { 
+        opacity: 0;
+        width: 0%; 
+    } to { 
+        opacity: 1;
+        width: 100%; 
+    }
+}
+
+$slide-delay: 500ms;
+$slide-duration: 1s;
+@keyframes slide {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 
 .card-container {
+    width: 100%;
     height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
 .card {
+    animation: slide $slide-duration $slide-delay ease-out backwards;
+    width: $card-width;
+    height: 530px;
     display: grid;
     grid-template: 80% 20% / 53% 47%;
     grid-template-areas: "greeting photo";
     font-family: ubuntu, roboto, sans-serif;
     overflow: hidden;
-    width: 790px;
-    height: 530px;
-    // margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border: 1px solid #3f6494;
     border-radius: 20px;
     box-shadow: 0px 5px 20px black;
@@ -41,23 +63,22 @@ body {
     &__greeting {
         grid-area: greeting;
         font-size: 1.2em;
-        place-self: center;
+        align-self: center;
+        justify-self: end;
         // border-bottom: 2px solid lighten($firstname-color, 50%);
         &:hover {
             cursor: default;
             .firstname { color: $name-color; }
             .name { color: $firstname-color }
-            &::after {
-                width: 100%;
-            }
         }
         &::after {
             content: "";
             display: block;
             background-color: white;
             height: 2px;
-            width: 0;
-            transition: width 500ms ease-out;
+            opacity: 0.5;
+            width: 100%;
+            animation: fill 1s $slide-delay+$slide-duration backwards;
         }
         span {
             font-size: 0.8em;
