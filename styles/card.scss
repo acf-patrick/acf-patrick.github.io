@@ -4,32 +4,58 @@ $blur-extent: 7px;
 $photo-bg-color: rgba(0, 2, 22, 0.7);
 $name-color: rgb(16, 26, 26);
 $firstname-color: rgb(94, 0, 94);
+$card-width: 790px;
+
 @function bg-color($opacity) {
     @return rgba(155, 155, 255, $opacity);
 }
 
-body {
-    background: url("assets/images/card-bg.jpg") center no-repeat fixed;
-    background-size: cover;
+$fill-duration: 700ms;
+@keyframes fill {
+    from { 
+        opacity: 0;
+        width: 0%; 
+    } to { 
+        opacity: 1;
+        width: 100%; 
+    }
+}
+
+$slide-delay: 750ms;
+$slide-duration: 1s;
+$global-delay: ($slide-delay+$slide-duration)*0.75;
+@keyframes slide {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
 }
 
 .card-container {
+    width: 100%;
     height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+@keyframes name-slide {
+    0% { 
+        transform: translateX(-100%); 
+    }
 }
 
 .card {
+	animation: slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards;
+    width: $card-width;
+    height: 530px;
     display: grid;
     grid-template: 80% 20% / 53% 47%;
     grid-template-areas: "greeting photo";
     font-family: ubuntu, roboto, sans-serif;
     overflow: hidden;
-    width: 790px;
-    height: 530px;
-    // margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border: 1px solid #3f6494;
     border-radius: 20px;
     box-shadow: 0px 5px 20px black;
@@ -41,23 +67,23 @@ body {
     &__greeting {
         grid-area: greeting;
         font-size: 1.2em;
-        place-self: center;
+        align-self: center;
+        justify-self: end;
+        overflow: hidden;
         // border-bottom: 2px solid lighten($firstname-color, 50%);
         &:hover {
             cursor: default;
             .firstname { color: $name-color; }
             .name { color: $firstname-color }
-            &::after {
-                width: 100%;
-            }
         }
         &::after {
             content: "";
             display: block;
             background-color: white;
             height: 2px;
-            width: 0;
-            transition: width 500ms ease-out;
+            opacity: 0.5;
+            width: 100%;
+            animation: fill $fill-duration $global-delay+$fill-duration backwards;
         }
         span {
             font-size: 0.8em;
@@ -72,11 +98,13 @@ body {
             color: $name-color;
             margin-bottom: 0px;
             transition: color 400ms ease-in;
+            animation: name-slide $fill-duration $global-delay cubic-bezier(.63,0,.23,1.32) backwards; /* HERE */
         }
         .firstname {
             color: $firstname-color;
             margin-top: 0px;
             transition: color 400ms ease-in;
+            animation: name-slide $fill-duration $global-delay cubic-bezier(.63,0,.23,1.32) backwards; /* HERE */
         }
     }
     &__photo {

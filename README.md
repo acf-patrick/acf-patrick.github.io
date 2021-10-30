@@ -1,1 +1,1 @@
-My portfolio written in SASS
+My portfolio
