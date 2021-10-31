@@ -24,7 +24,7 @@
 
 @keyframes fill {
   from {
-    opacity: 0;
+    opacity: 0.2;
     width: 0%; }
   to {
     opacity: 1;
@@ -58,7 +58,7 @@
   overflow: hidden;
   border: 1px solid #3f6494;
   border-radius: 20px;
-  box-shadow: 0px 5px 20px black;
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px); }
   @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
@@ -137,25 +137,37 @@
         text-shadow: 1px 1px 2px cyan; }
 
 #projects {
-  display: grid; }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+.project__illustration {
+  width: 320px;
+  height: 270px; }
+
+html {
+  scroll-behavior: smooth; }
 
 body {
-  background: url("assets/images/card-bg.jpg") center no-repeat fixed;
-  background-size: cover; }
+  background: url("assets/images/sea.jpg") center no-repeat fixed;
+  background-size: cover;
+  scroll-behavior: smooth; }
 
 .main {
-  min-width: 830px;
   width: 100%;
   margin: auto; }
 
+@keyframes pulse {
+  from {
+    opacity: 0.1; }
+  to {
+    opacity: 0.7; } }
+
 .anchor {
+  z-index: 1;
   position: fixed;
   top: 50px;
   right: 50px;
   background: lightskyblue;
   box-shadow: 0px 5px 15px black;
   border-radius: 50%;
-  opacity: 0.2;
-  transition: opacity 500ms; }
-  .anchor:hover {
-    opacity: 1; }
+  animation: pulse 1.5s 3s ease-in-out backwards infinite alternate; }

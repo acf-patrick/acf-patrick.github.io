@@ -13,7 +13,7 @@ $card-width: 790px;
 $fill-duration: 700ms;
 @keyframes fill {
     from { 
-        opacity: 0;
+        opacity: 0.2;
         width: 0%; 
     } to { 
         opacity: 1;
@@ -48,7 +48,7 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
 }
 
 .card {
-	animation: slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards;
+    animation: slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards;
     width: $card-width;
     height: 530px;
     display: grid;
@@ -58,7 +58,7 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
     overflow: hidden;
     border: 1px solid #3f6494;
     border-radius: 20px;
-    box-shadow: 0px 5px 20px black;
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur($blur-extent);
     -webkit-backdrop-filter: blur($blur-extent);
     @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

@@ -1,7 +1,11 @@
 #projects {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .project {
-    
+    &__illustration {
+        width: 320px;
+        height: 270px;
+    }
 }
