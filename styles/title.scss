@@ -1,0 +1,51 @@
+$title-delay: 3s;
+$title-duration: 400ms;
+@keyframes span-title {
+    from {
+        opacity: 0;
+        transform: translateY(-15px)
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes span {
+    from { 
+        width: 0;
+    } 
+    to { 
+        width: 50%;
+    }
+}
+$title-color: #acb7dd;
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+    h1 {
+        color: $title-color;
+        text-shadow: -3px 3px 5px rgba(0, 0, 0, 0.7);
+        font-family: roboto;
+        margin-bottom: 1rem;
+        animation: span-title $title-duration $title-delay cubic-bezier(0.02, 0.01, 0.49, 1.04) both;
+    }
+    .bar {
+        width: 50%;
+        height: 2px;
+        margin: auto;
+        position: relative;
+        &::before, &::after {
+            content: "";
+            height: 2px;
+            display: block;
+            background-color: cyan;
+            position: absolute;
+            animation: span 600ms $title-delay+$title-duration ease-out both;
+        }
+        &::before {
+            left: 50%;
+        }
+        &::after {
+            right: 50%;
+        }
+    }
+}

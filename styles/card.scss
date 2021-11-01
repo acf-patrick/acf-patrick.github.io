@@ -34,6 +34,11 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
         opacity: 0.3;
     }
 }
+@keyframes blur {
+    100% { 
+        backdrop-filter: blur($blur-extent);
+    }
+}
 
 .card-container {
     width: 100%;
@@ -49,7 +54,8 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
 }
 
 .card {
-    animation: card-slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards;
+    animation: card-slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards,
+                blur $fill-duration $global-delay+$fill-duration forwards;
     width: $card-width;
     height: $card-height;
     display: grid;
@@ -60,8 +66,6 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
     border: 1px solid #3f6494;
     border-radius: 20px;
     box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur($blur-extent);
-    -webkit-backdrop-filter: blur($blur-extent);
     @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
         background: linear-gradient(45deg, bg-color(0.3), rgba(255, 255, 255, 0.5)); // bg-color(0.3);
     }
@@ -104,7 +108,7 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
             color: $firstname-color;
             margin-top: 0px;
             transition: color 400ms ease-in;
-            animation: name-slide $fill-duration $global-delay cubic-bezier(.63,0,.23,1.32) backwards; /* HERE */
+            animation: name-slide $fill-duration $global-delay+100ms cubic-bezier(.63,0,.23,1.32) backwards; /* HERE */
         }
     }
     &__photo {

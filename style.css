@@ -22,6 +22,10 @@
   font-family: roboto-light;
   src: url("assets/fonts/Roboto-Light.ttf"); }
 
+@font-face {
+  font-family: ubuntu-light;
+  src: url("assets/fonts/Ubuntu-L.ttf"); }
+
 @keyframes fill {
   from {
     opacity: 0.2;
@@ -37,6 +41,10 @@
   50% {
     opacity: 0.3; } }
 
+@keyframes blur {
+  100% {
+    backdrop-filter: blur(7px); } }
+
 .card-container {
   width: 100%;
   height: 100vh;
@@ -48,7 +56,7 @@
     transform: translateX(-100%); } }
 
 .card {
-  animation: card-slide 750ms 1s cubic-bezier(0, 0.66, 1, 1.01) backwards;
+  animation: card-slide 750ms 1s cubic-bezier(0, 0.66, 1, 1.01) backwards, blur 700ms 2012.5ms forwards;
   width: 50rem;
   height: 33rem;
   display: grid;
@@ -58,9 +66,7 @@
   overflow: hidden;
   border: 1px solid #3f6494;
   border-radius: 20px;
-  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px); }
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.6); }
   @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .card {
       background: linear-gradient(45deg, rgba(155, 155, 255, 0.3), rgba(255, 255, 255, 0.5)); } }
@@ -100,7 +106,7 @@
       color: #5e005e;
       margin-top: 0px;
       transition: color 400ms ease-in;
-      animation: name-slide 700ms 1312.5ms cubic-bezier(0.63, 0, 0.23, 1.32) backwards;
+      animation: name-slide 700ms 1412.5ms cubic-bezier(0.63, 0, 0.23, 1.32) backwards;
       /* HERE */ }
   .card__photo {
     width: 424px;
@@ -135,7 +141,46 @@
       .card__nav a:hover {
         text-shadow: 1px 1px 2px cyan; }
 
-#projects {
+@keyframes span-title {
+  from {
+    opacity: 0;
+    transform: translateY(-15px); }
+  to {
+    opacity: 1; } }
+
+@keyframes span {
+  from {
+    width: 0; }
+  to {
+    width: 50%; } }
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem; }
+  .title h1 {
+    color: #acb7dd;
+    text-shadow: -3px 3px 5px rgba(0, 0, 0, 0.7);
+    font-family: roboto;
+    margin-bottom: 1rem;
+    animation: span-title 400ms 3s cubic-bezier(0.02, 0.01, 0.49, 1.04) both; }
+  .title .bar {
+    width: 50%;
+    height: 2px;
+    margin: auto;
+    position: relative; }
+    .title .bar::before, .title .bar::after {
+      content: "";
+      height: 2px;
+      display: block;
+      background-color: cyan;
+      position: absolute;
+      animation: span 600ms 3.4s ease-out both; }
+    .title .bar::before {
+      left: 50%; }
+    .title .bar::after {
+      right: 50%; }
+
+.projects {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -157,7 +202,7 @@
   .project:hover {
     cursor: pointer;
     box-shadow: 0px 4px 5px black;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(245, 255, 250, 0.4);
     transform: translateY(-10px); }
   .project > figure {
     margin: 0px;
@@ -174,35 +219,13 @@
     color: lightskyblue;
     padding: 0.5rem;
     width: 100%; }
-    .project__title::after {
-      content: "";
-      width: 50%;
-      height: 100%;
-      display: inline-block;
-      background-color: white; }
   .project__description {
     padding: 1rem;
     color: #111111;
     text-align: justify;
-    font-family: roboto-light; }
+    font-family: ubuntu-light, roboto-light; }
     .project__description > em {
       font-style: normal; }
-
-@keyframes line {
-  from {
-    width: 0px; }
-  to {
-    width: 300px; } }
-
-.line {
-  width: 300px;
-  text-align: center;
-  margin-bottom: 20px;
-  height: 2px;
-  background-color: white;
-  position: relative;
-  transform-origin: center;
-  animation: line 1s 3s ease-out backwards; }
 
 html {
   scroll-behavior: smooth; }
@@ -227,7 +250,7 @@ body {
   position: fixed;
   top: 50px;
   right: 50px;
-  background: lightskyblue;
+  background: #3c5d72;
   box-shadow: 0px 5px 15px black;
   border-radius: 50%;
   animation: pulse 1.5s 3s ease-in-out backwards infinite alternate; }

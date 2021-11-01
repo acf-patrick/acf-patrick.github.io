@@ -1,6 +1,8 @@
+@import "title";
+
 $cell-width: 320px;
 
-#projects {
+.projects {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax($cell-width, 1fr));
@@ -24,7 +26,7 @@ $cell-width: 320px;
     &:hover {
         cursor: pointer;
         box-shadow: 0px 4px 5px rgba(0, 0, 0, 1);
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(245, 255, 250, 0.4);// rgba(255, 255, 255, 0.2);
         transform: translateY(-10px);
     }
 
@@ -45,43 +47,14 @@ $cell-width: 320px;
         color: lightskyblue;
         padding: 0.5rem;
         width: 100%;
-
-        &::after {
-            content: "";
-            width: 50%;
-            height: 100%;
-            display: inline-block;
-            background-color: white;
-        }
     }
     &__description {
         padding: 1rem;
         color: #111111;
         text-align: justify;
-        font-family: roboto-light;
+        font-family: ubuntu-light, roboto-light;
         > em {
             font-style: normal;
         }
     }
-}
-
-$line-width: 300px;
-@keyframes line {
-    from {
-        width: 0px;
-    }
-    to {
-        width: $line-width;
-    }
-}
-
-.line {
-    width: $line-width;
-    text-align: center;
-    margin-bottom: 20px;
-    height: 2px;
-    background-color: white;
-    position: relative;
-    transform-origin: center;
-    animation: line 1s 3s ease-out backwards;
 }
