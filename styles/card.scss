@@ -4,7 +4,8 @@ $blur-extent: 7px;
 $photo-bg-color: rgba(0, 2, 22, 0.7);
 $name-color: rgb(16, 26, 26);
 $firstname-color: rgb(94, 0, 94);
-$card-width: 790px;
+$card-width: 50rem;// 790px;
+$card-height: 33rem;// 530px;
 
 @function bg-color($opacity) {
     @return rgba(155, 155, 255, $opacity);
@@ -24,7 +25,7 @@ $fill-duration: 700ms;
 $slide-delay: 750ms;
 $slide-duration: 1s;
 $global-delay: ($slide-delay+$slide-duration)*0.75;
-@keyframes slide {
+@keyframes card-slide {
     0% {
         transform: translateY(-60px);
         opacity: 0;
@@ -48,9 +49,9 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
 }
 
 .card {
-    animation: slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards;
+    animation: card-slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards;
     width: $card-width;
-    height: 530px;
+    height: $card-height;
     display: grid;
     grid-template: 80% 20% / 53% 47%;
     grid-template-areas: "greeting photo";
@@ -62,11 +63,10 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
     backdrop-filter: blur($blur-extent);
     -webkit-backdrop-filter: blur($blur-extent);
     @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-        background-color: bg-color(0.3);
+        background: linear-gradient(45deg, bg-color(0.3), rgba(255, 255, 255, 0.5)); // bg-color(0.3);
     }
     &__greeting {
         grid-area: greeting;
-        font-size: 1.2em;
         align-self: center;
         justify-self: end;
         overflow: hidden;
@@ -86,12 +86,12 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
             animation: fill $fill-duration $global-delay+$fill-duration backwards;
         }
         span {
-            font-size: 0.8em;
+            font-size: 1rem;
             color: $photo-bg-color;
         }
         h1 {
             font-family: zillaslab;
-            font-size: 2.2em;
+            font-size: 2.6rem;
             letter-spacing: 2px;
         }
         .name {
@@ -132,7 +132,7 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
         }
         a {
             @mixin clear-bg($direction) {
-                background: linear-gradient($direction, cyan, rgb(96, 0, 165), rgb(53, 53, 255));
+                background: linear-gradient($direction, rgb(96, 0, 165), rgb(53, 53, 255), brown);
                 -webkit-background-clip: text;
                 background-clip: text; 
                 -webkit-text-fill-color: transparent;

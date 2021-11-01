@@ -30,7 +30,7 @@
     opacity: 1;
     width: 100%; } }
 
-@keyframes slide {
+@keyframes card-slide {
   0% {
     transform: translateY(-60px);
     opacity: 0; }
@@ -48,9 +48,9 @@
     transform: translateX(-100%); } }
 
 .card {
-  animation: slide 750ms 1s cubic-bezier(0, 0.66, 1, 1.01) backwards;
-  width: 790px;
-  height: 530px;
+  animation: card-slide 750ms 1s cubic-bezier(0, 0.66, 1, 1.01) backwards;
+  width: 50rem;
+  height: 33rem;
   display: grid;
   grid-template: 80% 20% / 53% 47%;
   grid-template-areas: "greeting photo";
@@ -63,10 +63,9 @@
   -webkit-backdrop-filter: blur(7px); }
   @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .card {
-      background-color: rgba(155, 155, 255, 0.3); } }
+      background: linear-gradient(45deg, rgba(155, 155, 255, 0.3), rgba(255, 255, 255, 0.5)); } }
   .card__greeting {
     grid-area: greeting;
-    font-size: 1.2em;
     align-self: center;
     justify-self: end;
     overflow: hidden; }
@@ -85,11 +84,11 @@
       width: 100%;
       animation: fill 700ms 2012.5ms backwards; }
     .card__greeting span {
-      font-size: 0.8em;
+      font-size: 1rem;
       color: rgba(0, 2, 22, 0.7); }
     .card__greeting h1 {
       font-family: zillaslab;
-      font-size: 2.2em;
+      font-size: 2.6rem;
       letter-spacing: 2px; }
     .card__greeting .name {
       color: #101a1a;
@@ -128,7 +127,7 @@
     .card__nav a {
       text-decoration: none;
       font-weight: bold;
-      background: linear-gradient(to left, cyan, #6000a5, #3535ff);
+      background: linear-gradient(to left, #6000a5, #3535ff, brown);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -138,11 +137,72 @@
 
 #projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  align-items: start;
+  width: 85%;
+  margin: auto; }
 
-.project__illustration {
+.project {
   width: 320px;
-  height: 270px; }
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  transition: box-shadow ease-in-out, background-color ease-in-out, transform ease-in;
+  transition-duration: 300ms; }
+  .project:hover {
+    cursor: pointer;
+    box-shadow: 0px 4px 5px black;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px); }
+  .project > figure {
+    margin: 0px;
+    position: relative; }
+  .project__illustration {
+    width: 100%;
+    height: 250px; }
+  .project__title {
+    font-family: zillaslab;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    font-size: 1.5rem;
+    color: lightskyblue;
+    padding: 0.5rem;
+    width: 100%; }
+    .project__title::after {
+      content: "";
+      width: 50%;
+      height: 100%;
+      display: inline-block;
+      background-color: white; }
+  .project__description {
+    padding: 1rem;
+    color: #111111;
+    text-align: justify;
+    font-family: roboto-light; }
+    .project__description > em {
+      font-style: normal; }
+
+@keyframes line {
+  from {
+    width: 0px; }
+  to {
+    width: 300px; } }
+
+.line {
+  width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  transform-origin: center;
+  animation: line 1s 3s ease-out backwards; }
 
 html {
   scroll-behavior: smooth; }

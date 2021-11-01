@@ -1,11 +1,87 @@
+$cell-width: 320px;
+
 #projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax($cell-width, 1fr));
+    justify-items: center;
+    align-items: start;
+    width: 85%;
+    margin: auto;
 }
 
 .project {
-    &__illustration {
-        width: 320px;
-        height: 270px;
+    width: $cell-width;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
+
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    transition: box-shadow ease-in-out, background-color ease-in-out, transform ease-in;
+    transition-duration: 300ms;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-10px);
     }
+
+    > figure {
+        margin: 0px;
+        position: relative;
+    }
+    &__illustration {
+        width: 100%; // $cell-width;
+        height: 250px;
+    }
+    &__title {
+        font-family: zillaslab;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        bottom: 0;
+        font-size: 1.5rem;
+        color: lightskyblue;
+        padding: 0.5rem;
+        width: 100%;
+
+        &::after {
+            content: "";
+            width: 50%;
+            height: 100%;
+            display: inline-block;
+            background-color: white;
+        }
+    }
+    &__description {
+        padding: 1rem;
+        color: #111111;
+        text-align: justify;
+        font-family: roboto-light;
+        > em {
+            font-style: normal;
+        }
+    }
+}
+
+$line-width: 300px;
+@keyframes line {
+    from {
+        width: 0px;
+    }
+    to {
+        width: $line-width;
+    }
+}
+
+.line {
+    width: $line-width;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+    transform-origin: center;
+    animation: line 1s 3s ease-out backwards;
 }
