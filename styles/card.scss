@@ -53,9 +53,25 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
     }
 }
 
+.animate {
+    &-card {
+        animation: card-slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards,
+                    blur $fill-duration $global-delay+$fill-duration forwards;
+    }
+    &-name {
+        animation: name-slide $fill-duration $global-delay cubic-bezier(.63,0,.23,1.32) backwards;
+    }
+    &-firstname {
+        animation: name-slide $fill-duration $global-delay+100ms cubic-bezier(.63,0,.23,1.32) backwards;
+    }
+    &-nameline {
+        animation: fill $fill-duration $global-delay+$fill-duration backwards;
+    }
+}
+
 .card {
     animation: card-slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards,
-                blur $fill-duration $global-delay+$fill-duration forwards;
+        blur $fill-duration $global-delay+$fill-duration forwards;
     width: $card-width;
     height: $card-height;
     display: grid;
@@ -102,13 +118,13 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
             color: $name-color;
             margin-bottom: 0px;
             transition: color 400ms ease-in;
-            animation: name-slide $fill-duration $global-delay cubic-bezier(.63,0,.23,1.32) backwards; /* HERE */
+            animation: name-slide $fill-duration $global-delay cubic-bezier(.63,0,.23,1.32) backwards;
         }
         .firstname {
             color: $firstname-color;
             margin-top: 0px;
             transition: color 400ms ease-in;
-            animation: name-slide $fill-duration $global-delay+100ms cubic-bezier(.63,0,.23,1.32) backwards; /* HERE */
+            animation: name-slide $fill-duration $global-delay+100ms cubic-bezier(.63,0,.23,1.32) backwards;
         }
     }
     &__photo {
