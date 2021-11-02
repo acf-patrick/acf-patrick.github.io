@@ -1,0 +1,91 @@
+$skill-cell-width: 300px;
+$fill-bar-duration: 300ms;
+$fill-bar-delay: $title-delay+$title-duration;
+
+@mixin random-bg {
+    background-color: rgb(random(255), random(255), random(255));
+}
+
+@keyframes fill-bar {
+    0% {
+        width: 0px;
+    }
+}
+
+@keyframes box {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.skills {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($skill-cell-width, 1fr));
+    place-items: start center;
+    gap: 20px;
+    @for $i from 1 through 3 {
+        > :nth-child(#{$i}) > div {
+            @for $j from 1 through 3 {
+                > :nth-child(#{$j}) div::after{
+                    @include random-bg();
+                    animation: fill-bar $fill-bar-duration $fill-bar-delay+$fill-bar-duration*($i*3+$j) ease-out backwards;
+                }
+            }
+        }
+    }
+}
+
+.skill {
+    width: $skill-cell-width;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    // background-color: white;
+    padding-bottom: 2rem;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+    &__container {
+        width: 80%;
+        margin: auto;
+    }
+    &__title {
+        text-align: center;
+        font-family: roboto;
+        color: aliceblue;
+        letter-spacing: 2px;
+        font-weight: normal;
+    }
+    &__language {
+        margin-bottom: 1rem;
+        span {
+            font-family: ubuntu;
+            font-size: 0.9rem;
+            color: #b0e0e6;
+        }
+        &__bar {
+            height: 0.5rem;
+            margin-top: 5px;
+            // border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.3);
+            &::after {
+                content: "";
+                display: block;
+                height: 100%;
+                border-radius: 20px;
+            }
+        }
+        @for $i from 4 through 8 {
+            &__bar[data-length*="#{$i}"] {
+                &::after {
+                    width: $i*10%;
+                }
+            }
+        }
+    }
+}

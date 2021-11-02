@@ -130,7 +130,7 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
         place-items: center;
         $content: about, skills, projects;
         @each $c in $content {
-            .#{$c} {
+            &__#{$c} {
                 grid-area: $c;
             }
         }

@@ -1,11 +1,14 @@
 $title-delay: 3s;
 $title-duration: 400ms;
 @keyframes span-title {
-    from {
+    0% {
         opacity: 0;
         transform: translateY(-15px)
     }
-    to {
+    50% {
+        opacity: 0.3;
+    }
+    100% {
         opacity: 1;
     }
 }
@@ -19,10 +22,12 @@ $title-duration: 400ms;
 }
 $title-color: #acb7dd;
 .title {
-    text-align: center;
-    margin-bottom: 3rem;
+    justify-self: stretch;
+    margin: 3rem;
     h1 {
         color: $title-color;
+        letter-spacing: 3px;
+        text-align: center;
         text-shadow: -3px 3px 5px rgba(0, 0, 0, 0.7);
         font-family: roboto;
         margin-bottom: 1rem;
