@@ -47,7 +47,18 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
     height: 100vh;
     display: grid;
     place-items: center;
-}
+/*     &:hover {
+        .card {
+            animation: card-slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards,
+            blur $fill-duration $global-delay+$fill-duration forwards;
+        }
+    }
+    &:not(:hover) {
+        .card {
+            animation: none;
+        }
+    }
+ */}
 
 @keyframes name-slide {
     0% { 
