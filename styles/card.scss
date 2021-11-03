@@ -22,9 +22,11 @@ $fill-duration: 700ms;
     }
 }
 
+
 $slide-delay: 750ms;
 $slide-duration: 1s;
 $global-delay: ($slide-delay+$slide-duration)*0.75;
+
 @keyframes card-slide {
     0% {
         transform: translateY(-60px);
@@ -50,22 +52,6 @@ $global-delay: ($slide-delay+$slide-duration)*0.75;
 @keyframes name-slide {
     0% { 
         transform: translateX(-100%); 
-    }
-}
-
-.animate {
-    &-card {
-        animation: card-slide $slide-delay $slide-duration cubic-bezier(0,.66,1,1.01) backwards,
-                    blur $fill-duration $global-delay+$fill-duration forwards;
-    }
-    &-name {
-        animation: name-slide $fill-duration $global-delay cubic-bezier(.63,0,.23,1.32) backwards;
-    }
-    &-firstname {
-        animation: name-slide $fill-duration $global-delay+100ms cubic-bezier(.63,0,.23,1.32) backwards;
-    }
-    &-nameline {
-        animation: fill $fill-duration $global-delay+$fill-duration backwards;
     }
 }
 

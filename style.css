@@ -55,18 +55,6 @@
   0% {
     transform: translateX(-100%); } }
 
-.animate-card {
-  animation: card-slide 750ms 1s cubic-bezier(0, 0.66, 1, 1.01) backwards, blur 700ms 2012.5ms forwards; }
-
-.animate-name {
-  animation: name-slide 700ms 1312.5ms cubic-bezier(0.63, 0, 0.23, 1.32) backwards; }
-
-.animate-firstname {
-  animation: name-slide 700ms 1412.5ms cubic-bezier(0.63, 0, 0.23, 1.32) backwards; }
-
-.animate-nameline {
-  animation: fill 700ms 2012.5ms backwards; }
-
 .card {
   animation: card-slide 750ms 1s cubic-bezier(0, 0.66, 1, 1.01) backwards, blur 700ms 2012.5ms forwards;
   width: 50rem;
@@ -267,31 +255,31 @@
   place-items: start center;
   gap: 20px; }
   .skills > :nth-child(1) > div > :nth-child(1) div::after {
-    background-color: #88aa0a;
+    background-color: #4dfd56;
     animation: fill-bar 300ms 4.6s ease-out backwards; }
   .skills > :nth-child(1) > div > :nth-child(2) div::after {
-    background-color: #a4727e;
+    background-color: #2af8e6;
     animation: fill-bar 300ms 4.9s ease-out backwards; }
   .skills > :nth-child(1) > div > :nth-child(3) div::after {
-    background-color: #ae6a79;
+    background-color: #2defdb;
     animation: fill-bar 300ms 5.2s ease-out backwards; }
   .skills > :nth-child(2) > div > :nth-child(1) div::after {
-    background-color: #65a32a;
+    background-color: #838d2d;
     animation: fill-bar 300ms 5.5s ease-out backwards; }
   .skills > :nth-child(2) > div > :nth-child(2) div::after {
-    background-color: #2ec15c;
+    background-color: #314b2b;
     animation: fill-bar 300ms 5.8s ease-out backwards; }
   .skills > :nth-child(2) > div > :nth-child(3) div::after {
-    background-color: #5c93bf;
+    background-color: #d418ce;
     animation: fill-bar 300ms 6.1s ease-out backwards; }
   .skills > :nth-child(3) > div > :nth-child(1) div::after {
-    background-color: #5f0f5f;
+    background-color: #e65a2f;
     animation: fill-bar 300ms 6.4s ease-out backwards; }
   .skills > :nth-child(3) > div > :nth-child(2) div::after {
-    background-color: #6296ed;
+    background-color: #a85492;
     animation: fill-bar 300ms 6.7s ease-out backwards; }
   .skills > :nth-child(3) > div > :nth-child(3) div::after {
-    background-color: #843852;
+    background-color: #26f206;
     animation: fill-bar 300ms 7s ease-out backwards; }
 
 .skill {
