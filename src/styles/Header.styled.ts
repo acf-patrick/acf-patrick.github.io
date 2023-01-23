@@ -21,7 +21,7 @@ const Photo = styled.div`
   margin-top: 4rem;
   border-radius: 12rem 12rem 0 0;
   padding: 1.5rem;
-  padding-top: 5rem;
+  padding-top: 4rem;
   overflow: hidden;
 
   & > img {
@@ -88,7 +88,7 @@ const ScrollButton = styled.a`
 
 const Container = styled.header`
   height: 100vh;
-  padding-top: 7rem;
+  padding-top: 5rem;
   overflow: hidden;
 
   @media ${device.lg} {
