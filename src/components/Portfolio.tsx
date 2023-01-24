@@ -1,9 +1,9 @@
-import Container from "../styles/Portfolio.styled";
+import Section from "../styles/Section";
 
 function Portfolio() {
-  return <Container>
+  return <Section id="portfolio">
     portfolio
-  </Container>
+  </Section>
 }
 
 export default Portfolio;

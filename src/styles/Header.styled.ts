@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import BaseContainer from "./Container";
 import { device } from "./Breakpoints";
 
@@ -37,6 +37,11 @@ const Socials = styled.div`
   position: absolute;
   bottom: 5rem;
   left: 0;
+  font-size: 1.25rem;
+
+  &>a:hover {
+    transform: scale(1.125);
+  }
 
   &:after {
     content: "";
@@ -57,6 +62,15 @@ const Buttons = styled.div`
   gap: 1rem;
 `;
 
+const BounceAnimation = keyframes`
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+`;
+
 const ScrollButton = styled.a`
   position: absolute;
   right: 0rem;
@@ -64,6 +78,7 @@ const ScrollButton = styled.a`
   font-size: 0.9rem;
   border-radius: 3rem;
   padding: 0.75rem 0.75rem;
+  animation: ${BounceAnimation} 800ms alternate linear infinite both;
 
   * {
     font-size: 1.25rem;
@@ -88,11 +103,11 @@ const ScrollButton = styled.a`
 
 const Container = styled.header`
   height: 100vh;
-  padding-top: 5rem;
+  padding-top: 7rem;
   overflow: hidden;
 
   @media ${device.lg} {
-    height: 68vh; 
+    height: 68vh;
   }
 
   @media ${device.md} {

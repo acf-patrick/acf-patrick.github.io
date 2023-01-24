@@ -1,9 +1,9 @@
-import Container from "../styles/Experience.styled";
+import Section from "../styles/Section";
 
 function Experience() {
-  return <Container>
+  return <Section id="experience">
     experience
-  </Container>
+  </Section>
 }
 
 export default Experience;

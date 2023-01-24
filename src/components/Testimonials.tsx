@@ -1,9 +1,9 @@
-import Container from "../styles/Testimonials.styled";
+import Section from "../styles/Section";
 
 function Testimonials() {
-  return <Container>
+  return <Section id="testimonials">
     testimonials
-  </Container>
+  </Section>
 }
 
 export default Testimonials;

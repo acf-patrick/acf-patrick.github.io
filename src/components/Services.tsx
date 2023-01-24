@@ -1,9 +1,9 @@
-import Container from "../styles/Services.styled";
+import Section from "../styles/Section";
 
 function Services() {
-  return <Container>
+  return <Section id="services">
     services
-  </Container>
+  </Section>
 }
 
 export default Services;

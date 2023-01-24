@@ -2,9 +2,15 @@ import CV from "../assets/resume.pdf";
 import photo from "../assets/images/photo-1.png";
 import Button from "../styles/Button";
 import styled from "styled-components";
-import { Inner, Buttons, ScrollButton, Socials, Photo, Container } from "../styles/Header.styled";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import {
+  Inner,
+  Buttons,
+  ScrollButton,
+  Socials,
+  Photo,
+  Container,
+} from "../styles/Header.styled";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { GrDown } from "react-icons/gr";
 
 function Header() {
@@ -17,7 +23,7 @@ function Header() {
       <Inner>
         <h5>Hello I'm</h5>
         <h1>Patrick Miharisoa</h1>
-        <LightTitle>Fullstack Developer</LightTitle>
+        <LightTitle>Software Developer</LightTitle>
         <Buttons>
           <Button href={CV} download="MIHARISOA Tojoniaina Patrick.pdf">
             Download CV
@@ -35,6 +41,9 @@ function Header() {
           </a>
           <a href="https://github.com/acf-patrick" target="_blank">
             <FaGithub />
+          </a>
+          <a href="https://web.facebook.com/profile.php?id=100009539585801">
+            <FaFacebook />
           </a>
         </Socials>
         <Photo>

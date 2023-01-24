@@ -1,9 +1,9 @@
-import Container from "../styles/About.styled";
+import Section from "../styles/Section";
 
 function About() {
-  return <Container>
+  return <Section id="about">
     about
-  </Container>
+  </Section>
 }
 
 export default About;

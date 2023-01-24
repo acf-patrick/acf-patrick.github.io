@@ -1,9 +1,7 @@
-import Container from "../styles/Contact.styled";
+import Section from "../styles/Section";
 
 function Contact() {
-  return <Container>
-    contact
-  </Container>
+  return <Section id="contact">contact</Section>;
 }
 
 export default Contact;
