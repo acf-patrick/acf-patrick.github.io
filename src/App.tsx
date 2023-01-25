@@ -15,9 +15,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Global />
-      <div className="App">
-        <Header />
+      <div>
         <Navbar />
+        <Header />
         <About />
         <Experience />
         <Services />

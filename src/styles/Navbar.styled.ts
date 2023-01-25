@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { device } from "./Breakpoints";
 
 const Showing = keyframes`
   from {
@@ -11,7 +12,46 @@ const Showing = keyframes`
   }
 `;
 
-export default styled.nav`
+const BounceAnimation = keyframes`
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+`;
+
+const ScrollButton = styled.a`
+  position: absolute;
+  right: 5rem;
+  top: calc(100vh - 100px);
+  font-size: 0.9rem;
+  border-radius: 3rem;
+  padding: 0.75rem 0.75rem;
+  animation: ${BounceAnimation} 800ms alternate linear infinite both;
+
+  * {
+    font-size: 1.25rem;
+  }
+
+  svg * {
+    stroke: ${({ theme }) => theme.colors.primary};
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary};
+
+    svg * {
+      stroke: ${({ theme }) => theme.colors.background};
+    }
+  }
+
+  @media ${device.md} {
+    display: none;
+  }
+`;
+
+const Container = styled.nav`
   background: rgba(0, 0, 0, 0.3);
   width: max-content;
   display: block;
@@ -23,9 +63,9 @@ export default styled.nav`
   gap: 0.8rem;
   border-radius: 3rem;
   backdrop-filter: blur(12px);
-  animation: ${Showing} 1s both;
+  animation: ${Showing} 1s both cubic-bezier(0.25, 0.1, 0.28, 1.29);
 
-  a {
+  &>a {
     background: transparent;
     padding: 0.8rem;
     border-radius: 50%;
@@ -43,3 +83,5 @@ export default styled.nav`
     }
   }
 `;
+
+export { Container, ScrollButton };

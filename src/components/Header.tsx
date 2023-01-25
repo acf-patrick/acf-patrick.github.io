@@ -5,13 +5,11 @@ import styled from "styled-components";
 import {
   Inner,
   Buttons,
-  ScrollButton,
   Socials,
   Photo,
   Container,
 } from "../styles/Header.styled";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
-import { GrDown } from "react-icons/gr";
 
 function Header() {
   const LightTitle = styled.h5`
@@ -49,9 +47,6 @@ function Header() {
         <Photo>
           <img src={photo} alt="photo" />
         </Photo>
-        <ScrollButton href="#contact">
-          <GrDown />
-        </ScrollButton>
       </Inner>
     </Container>
   );

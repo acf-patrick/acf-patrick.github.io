@@ -1,11 +1,12 @@
-import Container from "../styles/Navbar.styled";
+import { ScrollButton, Container } from "../styles/Navbar.styled";
 import { HiHome } from "react-icons/hi";
 import { BiBookAlt, BiMailSend, BiUserCircle } from "react-icons/bi";
 import { FaRegHandshake } from "react-icons/fa";
+import { GrDown } from "react-icons/gr";
 import { useState } from "react";
 
 function Navbar() {
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState(0);
   const links = [
     ["", <HiHome />],
     ["about", <BiUserCircle />],
@@ -15,17 +16,22 @@ function Navbar() {
   ];
 
   return (
-    <Container>
-      {links.map((link, index) => (
-        <a
-          href={`#${link[0]}`}
-          className={activeLink === link[0] ? "active" : ""}
-          onClick={() => setActiveLink(String(link[0]))}
-        >
-          {link[1]}
-        </a>
-      ))}
-    </Container>
+    <>
+      <ScrollButton href="#contact" onClick={()=> setActiveLink(4)}>
+        <GrDown />
+      </ScrollButton>
+      <Container>
+        {links.map((link, index) => (
+          <a
+            href={`#${link[0]}`}
+            className={activeLink === index ? "active" : ""}
+            onClick={() => setActiveLink(index)}
+          >
+            {link[1]}
+          </a>
+        ))}
+      </Container>
+    </>
   );
 }
 

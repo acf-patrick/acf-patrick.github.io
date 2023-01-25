@@ -29,25 +29,34 @@ const Photo = styled.div`
   }
 `;
 
+const BarGrowing = keyframes`
+  from {
+    height: 0;
+  }
+  to {
+    height: 4rem;
+  }
+`;
+
 const Socials = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
   position: absolute;
-  bottom: 5rem;
+  bottom: 1rem;
   left: 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
 
-  &>a:hover {
+  & > a:hover {
     transform: scale(1.125);
   }
 
   &:after {
     content: "";
     width: 1px;
-    height: 4rem;
     background: ${({ theme }) => theme.colors.primary};
+    animation: ${BarGrowing} 1s 1.25s both;
   }
 
   @media ${device.md} {
@@ -62,48 +71,9 @@ const Buttons = styled.div`
   gap: 1rem;
 `;
 
-const BounceAnimation = keyframes`
-  from {
-    transform: translateY(-5px);
-  }
-  to {
-    transform: translateY(5px);
-  }
-`;
-
-const ScrollButton = styled.a`
-  position: absolute;
-  right: 0rem;
-  bottom: 5rem;
-  font-size: 0.9rem;
-  border-radius: 3rem;
-  padding: 0.75rem 0.75rem;
-  animation: ${BounceAnimation} 800ms alternate linear infinite both;
-
-  * {
-    font-size: 1.25rem;
-  }
-
-  svg * {
-    stroke: ${({ theme }) => theme.colors.primary};
-  }
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.primary};
-
-    svg * {
-      stroke: ${({ theme }) => theme.colors.background};
-    }
-  }
-
-  @media ${device.md} {
-    display: none;
-  }
-`;
-
 const Container = styled.header`
   height: 100vh;
-  padding-top: 7rem;
+  padding-top: 4rem;
   overflow: hidden;
 
   @media ${device.lg} {
@@ -115,4 +85,4 @@ const Container = styled.header`
   }
 `;
 
-export { Inner, Photo, Buttons, ScrollButton, Socials, Container };
+export { Inner, Photo, Buttons, Socials, Container };
