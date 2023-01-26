@@ -65,27 +65,41 @@ const Content = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 
-    @media ${device.md} {
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
   }
 
   p {
-    margin: 2rem 0 2.5rem;
+    margin: 2rem 0;
     color: ${({ theme }) => theme.colors.primary};
+  }
 
-    @media ${device.lg} {
-      margin: 1rem 0 1.5rem;
+  @media ${device.lg} {
+    span {
+      display: block;
+      width: 100%;
+      position: relative;
+
+      a {
+        position: absolute;
+        right: 0;
+      }
     }
 
-    @media ${device.md} {
-      margin: 1.5rem 0;
+    p {
+      margin: 1rem 0 1.5rem;
     }
   }
 
   @media ${device.md} {
     text-align: center;
+
+    div {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    p {
+      margin: 1.5rem 0;
+    }
   }
 `;
 

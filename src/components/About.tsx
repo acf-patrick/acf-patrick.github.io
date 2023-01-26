@@ -61,7 +61,7 @@ function About() {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque voluptate distinctio sit doloribus sint repellat, optio repellendus vitae ex ad id consequatur nam reprehenderit officia asperiores dicta, aperiam ipsa eum?
           Ex, aliquid hic perspiciatis atque placeat, reiciendis eos excepturi facere doloremque recusandae, voluptatum iure incidunt porro sint id maiores ratione ea cum laborum praesentium ut in dolore veritatis! Labore, mollitia.
           Distinctio repellat aliquam delectus hic accusamus accusantium eligendi neque voluptas nemo laboriosam, autem similique in perspiciatis dolorum facere officia ipsam sit deleniti quod maiores corrupti laborum eius? Minus, nam voluptatum?</p>
-          <Button primary href="#contact">Let's Talk</Button>
+          <span><Button primary href="#contact">Let's Talk</Button></span>
         </Content>
       </Container>
     </Section>
