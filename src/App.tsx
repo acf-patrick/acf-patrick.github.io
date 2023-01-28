@@ -2,7 +2,6 @@ import Global from "./styles/Global";
 import theme from "./styles/Theme";
 import { ThemeProvider } from "styled-components";
 import About from "./components/About";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
@@ -22,7 +21,6 @@ function App() {
         <Services />
         <Portfolio />
         <Contact />
-        <Footer />
       </div>
     </ThemeProvider>
   );

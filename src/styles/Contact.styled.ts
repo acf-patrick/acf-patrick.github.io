@@ -5,6 +5,7 @@ import { device } from "./Breakpoints";
 const Container = styled(BaseContainer)`
   display: grid;
   width: 58%;
+  margin-bottom: 7rem;
   grid-template-columns: 30% 58%;
   gap: 12%;
 
