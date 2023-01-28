@@ -1,7 +1,7 @@
 const size = {
   lg: "1024px",
   md: "600px",
-  sm: ""
+  sm: "375px"
 }
 
 const device = {

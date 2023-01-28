@@ -83,6 +83,10 @@ const Container = styled.header`
   @media ${device.md} {
     height: 100vh;
   }
+
+  @media ${device.sm} {
+    padding-top: 0;
+  }
 `;
 
 export { Inner, Photo, Buttons, Socials, Container };
