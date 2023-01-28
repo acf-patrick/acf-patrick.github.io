@@ -25,6 +25,7 @@ function Navbar() {
           <a
             href={`#${link[0]}`}
             key={index}
+            title={`${link[0]}`}
             className={activeLink === index ? "active" : ""}
             onClick={() => setActiveLink(index)}
           >
