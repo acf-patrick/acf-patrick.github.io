@@ -44,7 +44,7 @@ const Socials = styled.div`
   align-items: center;
   gap: 0.75rem;
   position: absolute;
-  bottom: 1rem;
+  bottom: 3rem;
   left: 0;
   font-size: 1.3rem;
 
@@ -56,7 +56,7 @@ const Socials = styled.div`
     content: "";
     width: 1px;
     background: ${({ theme }) => theme.colors.primary};
-    animation: ${BarGrowing} 1s 1.25s both;
+    animation: ${BarGrowing} 1s 1.5s both;
   }
 
   @media ${device.md} {

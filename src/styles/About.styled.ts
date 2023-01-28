@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import BaseContainer from "./Container";
-import BaseSection from "./Section";
 import { device } from "./Breakpoints";
-
-const Section = styled(BaseSection)`
-  padding-top: 3rem;
-`;
 
 const Container = styled(BaseContainer)`
   display: grid;
@@ -70,6 +65,10 @@ const Content = styled.div`
   p {
     margin: 2rem 0;
     color: ${({ theme }) => theme.colors.primary};
+
+    a {
+      margin-top: 1rem;
+    }
   }
 
   @media ${device.lg} {
@@ -134,4 +133,4 @@ const CardStyled = styled.article`
   }
 `;
 
-export { Section, Container, CardStyled, Photo, Content };
+export { Container, CardStyled, Photo, Content };

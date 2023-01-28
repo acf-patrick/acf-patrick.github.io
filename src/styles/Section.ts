@@ -3,7 +3,8 @@ import { device } from "./Breakpoints";
 
 export default styled.section`
   margin-top: 8rem;
-  height: 100vh;
+  padding-top: 3rem;
+  /* height: 100vh; */
 
   & > h2,
   & > h5 {

@@ -12,7 +12,7 @@ const Showing = keyframes`
   }
 `;
 
-const BounceAnimation = keyframes`
+const Bouncing = keyframes`
   from {
     transform: translateY(-5px);
   }
@@ -28,7 +28,7 @@ const ScrollButton = styled.a`
   font-size: 0.9rem;
   border-radius: 3rem;
   padding: 0.75rem 0.75rem;
-  animation: ${BounceAnimation} 800ms alternate linear infinite both;
+  animation: ${Bouncing} 800ms alternate linear infinite both;
 
   * {
     font-size: 1.25rem;
@@ -63,7 +63,7 @@ const Container = styled.nav`
   gap: 0.8rem;
   border-radius: 3rem;
   backdrop-filter: blur(12px);
-  animation: ${Showing} 1s both cubic-bezier(0.25, 0.1, 0.28, 1.29);
+  animation: ${Showing} 1s 500ms both cubic-bezier(0.25, 0.1, 0.28, 1.29);
 
   &>a {
     background: transparent;

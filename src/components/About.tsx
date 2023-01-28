@@ -1,4 +1,10 @@
-import { Section, CardStyled, Container, Content, Photo } from "../styles/About.styled";
+import {
+  CardStyled,
+  Container,
+  Content,
+  Photo,
+} from "../styles/About.styled";
+import Section from "../styles/Section";
 import { FaAward } from "react-icons/fa";
 import { BsPeople } from "react-icons/bs";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
@@ -42,7 +48,7 @@ function About() {
 
   return (
     <Section id="about">
-      <h5>Get To Now</h5>
+      <h5>Get To Know</h5>
       <h2>About Me</h2>
 
       <Container>
@@ -58,10 +64,22 @@ function About() {
               <Card {...card} />
             ))}
           </div>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque voluptate distinctio sit doloribus sint repellat, optio repellendus vitae ex ad id consequatur nam reprehenderit officia asperiores dicta, aperiam ipsa eum?
-          Ex, aliquid hic perspiciatis atque placeat, reiciendis eos excepturi facere doloremque recusandae, voluptatum iure incidunt porro sint id maiores ratione ea cum laborum praesentium ut in dolore veritatis! Labore, mollitia.
-          Distinctio repellat aliquam delectus hic accusamus accusantium eligendi neque voluptas nemo laboriosam, autem similique in perspiciatis dolorum facere officia ipsam sit deleniti quod maiores corrupti laborum eius? Minus, nam voluptatum?</p>
-          <span><Button primary href="#contact">Let's Talk</Button></span>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
+            voluptate distinctio sit doloribus sint repellat, optio repellendus
+            vitae ex ad id consequatur nam reprehenderit officia asperiores
+            dicta, aperiam ipsa eum? Ex, aliquid hic perspiciatis atque placeat,
+            reiciendis eos excepturi facere doloremque recusandae, voluptatum
+            iure incidunt porro sint id maiores ratione ea cum laborum
+            praesentium ut in dolore veritatis! Labore, mollitia. Distinctio
+            repellat aliquam delectus hic accusamus accusantium eligendi neque
+            voluptas nemo laboriosam, autem similique in perspiciatis dolorum
+            facere officia ipsam sit deleniti quod maiores corrupti laborum
+            eius? Minus, nam voluptatum?<br />
+            <Button primary href="#contact">
+              Let's Talk
+            </Button>
+          </p>
         </Content>
       </Container>
     </Section>
