@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import backgroundImage from "../assets/images/background.png";
+import poppinsFont from "../assets/fonts/Poppins-Light.ttf";
 
 export default createGlobalStyle<{ theme: any }>`
   @font-face {
     font-family: Poppins;
-    src: url("../assets/fonts/Poppins-Light.ttf");
+    src: url(${poppinsFont});
   }
 
   :root {
@@ -26,7 +28,7 @@ export default createGlobalStyle<{ theme: any }>`
   body {
     margin: 0;
     background: ${({ theme }) => theme.colors.background};
-    background-image: url(../assets/images/background.png);
+    background-image: url(backgroundImage);
     color: white;
   }
 

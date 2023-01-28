@@ -17,13 +17,14 @@ function Navbar() {
 
   return (
     <>
-      <ScrollButton href="#contact" onClick={()=> setActiveLink(4)}>
+      <ScrollButton href="#contact" onClick={() => setActiveLink(4)}>
         <GrDown />
       </ScrollButton>
       <Container>
         {links.map((link, index) => (
           <a
             href={`#${link[0]}`}
+            key={index}
             className={activeLink === index ? "active" : ""}
             onClick={() => setActiveLink(index)}
           >

@@ -9,7 +9,7 @@ const theme = {
   sizes: {
     lg: "75%",
     md: "86%",
-    ms: "90%"
+    sm: "90%"
   },
   transition: "all 400ms ease"
 };

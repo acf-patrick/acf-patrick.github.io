@@ -64,6 +64,7 @@ const Content = styled.div`
 
   p {
     margin: 2rem 0;
+    user-select: none;
     color: ${({ theme }) => theme.colors.primary};
 
     a {

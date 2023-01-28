@@ -61,7 +61,7 @@ function About() {
         <Content>
           <div>
             {cards.map((card, index) => (
-              <Card {...card} />
+              <Card {...card} key={index}/>
             ))}
           </div>
           <p>
