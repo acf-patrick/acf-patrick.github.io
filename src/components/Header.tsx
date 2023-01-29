@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import CV from "../assets/resume.pdf";
 import photo from "../assets/images/photo-1.png";
 import Button from "../styles/Button";
@@ -10,11 +11,14 @@ import {
   Container,
 } from "../styles/Header.styled";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { ActiveLinkContext } from "../App";
 
 function Header() {
   const LightTitle = styled.h5`
     color: ${({ theme }) => theme.colors.light};
   `;
+
+  const [activeLink, setActiveLink] = useContext(ActiveLinkContext);
 
   return (
     <Container>
@@ -26,7 +30,13 @@ function Header() {
           <Button href={CV} download="MIHARISOA Tojoniaina Patrick.pdf">
             Download CV
           </Button>
-          <Button href="#contact" primary>
+          <Button
+            href="#contact"
+            onClick={() => {
+              setActiveLink("contact");
+            }}
+            primary
+          >
             Get in Touch
           </Button>
         </Buttons>

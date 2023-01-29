@@ -26,10 +26,6 @@ export default styled(BaseSection)`
     &:hover {
       background: transparent;
       border-color: ${({ theme }) => theme.colors.primaryVariant};
-
-      img {
-        transform: scale(1.125);
-      }
     }
 
     h3 {
@@ -54,6 +50,10 @@ export default styled(BaseSection)`
     img {
       width: 100%;
       transition: ${({ theme }) => theme.transition};
+
+      &:hover {
+        transform: scale(1.125);
+      }
     }
   }
 `;

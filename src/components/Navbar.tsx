@@ -3,10 +3,11 @@ import { HiHome } from "react-icons/hi";
 import { BiBookAlt, BiMailSend, BiUserCircle } from "react-icons/bi";
 import { FaRegHandshake } from "react-icons/fa";
 import { GrDown } from "react-icons/gr";
-import { useState } from "react";
+import { useContext } from "react";
+import { ActiveLinkContext } from "../App";
 
 function Navbar() {
-  const [activeLink, setActiveLink] = useState(0);
+  const [activeLink, setActiveLink] = useContext(ActiveLinkContext);
   const links = [
     ["", <HiHome />],
     ["about", <BiUserCircle />],
@@ -17,7 +18,7 @@ function Navbar() {
 
   return (
     <>
-      <ScrollButton href="#contact" onClick={() => setActiveLink(4)}>
+      <ScrollButton href="#contact" onClick={() => setActiveLink("contact")}>
         <GrDown />
       </ScrollButton>
       <Container>
@@ -26,8 +27,8 @@ function Navbar() {
             href={`#${link[0]}`}
             key={index}
             title={`${link[0]}`}
-            className={activeLink === index ? "active" : ""}
-            onClick={() => setActiveLink(index)}
+            className={activeLink === link[0] ? "active" : ""}
+            onClick={() => setActiveLink(link[0])}
           >
             {link[1]}
           </a>
