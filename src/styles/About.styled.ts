@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import BaseContainer from "./Container";
 import { device } from "./Breakpoints";
 
@@ -54,12 +54,20 @@ const Photo = styled.div`
   }
 `;
 
+const Rotating = keyframes`
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 const Content = styled.div`
   div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-
   }
 
   p {
@@ -110,6 +118,12 @@ const CardStyled = styled.article`
   padding: 2rem;
   text-align: center;
   transition: ${({ theme }) => theme.transition};
+
+  &:nth-of-type(2) {
+    svg {
+      animation: ${Rotating} 5s infinite linear;
+    }
+  }
 
   &:hover {
     background: transparent;

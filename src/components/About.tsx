@@ -1,17 +1,17 @@
+import { ActiveLinkContext } from "../App";
+import { useContext } from "react";
 import { CardStyled, Container, Content, Photo } from "../styles/About.styled";
 import Section from "../styles/Section";
 import { FaAward } from "react-icons/fa";
-import { BsPeople } from "react-icons/bs";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { GiFamilyTree } from "react-icons/gi";
+import { GrReactjs } from "react-icons/gr";
 import Image from "../assets/images/photo-2.jpeg";
 import Button from "../styles/Button";
-import { ActiveLinkContext } from "../App";
-import { useContext } from "react";
 
 interface ICardProps {
   icon: any;
   title: String;
-  description: String;
+  description?: String;
 }
 
 function Card({ icon, title, description }: ICardProps) {
@@ -29,17 +29,17 @@ function About() {
     {
       icon: <FaAward />,
       title: "Experience",
-      description: "+3 Years Working",
+      description: "1 Years Working",
     },
     {
-      icon: <BsPeople />,
-      title: "Clients",
-      description: "+200 Worldwide",
+      icon: <GrReactjs />,
+      title: "Techno",
+      description: "agnostic"
     },
     {
-      icon: <AiOutlineFundProjectionScreen />,
-      title: "Projects",
-      description: "+80 Completed",
+      icon: <GiFamilyTree />,
+      title: "Algorithm",
+      description: "optimizer"
     },
   ];
 
@@ -65,17 +65,12 @@ function About() {
             ))}
           </div>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
-            voluptate distinctio sit doloribus sint repellat, optio repellendus
-            vitae ex ad id consequatur nam reprehenderit officia asperiores
-            dicta, aperiam ipsa eum? Ex, aliquid hic perspiciatis atque placeat,
-            reiciendis eos excepturi facere doloremque recusandae, voluptatum
-            iure incidunt porro sint id maiores ratione ea cum laborum
-            praesentium ut in dolore veritatis! Labore, mollitia. Distinctio
-            repellat aliquam delectus hic accusamus accusantium eligendi neque
-            voluptas nemo laboriosam, autem similique in perspiciatis dolorum
-            facere officia ipsam sit deleniti quod maiores corrupti laborum
-            eius? Minus, nam voluptatum?
+            Hi! My name is Patrick Miharisoa. I really like algorithmic
+            challenges and problem solving, that's why I work as a C++ developer
+            supporting Computer Aided Designers using AutoCAD and GstarCAD
+            softwares, providing them the tools that will boost their
+            productivity and spare their times. On the other hand, I am also
+            working on Game, Web and Mobile development right now.
             <br />
             <Button
               primary

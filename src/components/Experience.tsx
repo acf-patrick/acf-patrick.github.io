@@ -48,7 +48,7 @@ function Experience() {
     {
       title: "computer aided design",
       skills: [
-        [ "C++ ObjectArx", "advanced" ],
+        [ "C++ ObjectArx", "experienced" ],
         [ "AutoCAD", "experienced" ],
         [ "QGIS", "experienced" ]
       ]

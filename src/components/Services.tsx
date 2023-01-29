@@ -31,32 +31,28 @@ function Services() {
     {
       title: "Web Development",
       services: [
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
+        "Creative ability",
+        "Attention to details",
+        "Keen interest to technology",
+        "Testing and improving functionnality"
       ],
     },
     {
       title: "CAD Development",
       services: [
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
+        "Experienced in Python and C/C++",
+        "Strong knowledge of Design patterns",
+        "Strong knowledge of Algebra and Geometry",
+        "Capable of defining quality standards",
+        "Experience in working with Visual Studio"
       ],
     },
     {
       title: "Game Development",
       services: [
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
-        "Lorem ipsum dolor sit amet consectetur.",
+        "Experienced in C#",
+        "Creative problem-solving skills",
+        "Analytical mindset"
       ],
     },
   ];

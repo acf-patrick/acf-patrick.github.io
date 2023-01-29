@@ -29,13 +29,16 @@ export default styled(BaseSection)`
     }
 
     h3 {
-      margin: 1.2rem 0 2rem;
+      margin: 1rem 0 1rem;
       font-weight: bold;
+    }
+
+    p {
+      color: ${({ theme }) => theme.colors.primaryVariant};
     }
 
     div {
       &:first-of-type {
-        aspect-ratio: 1/1;
         border-radius: 1.5rem;
         overflow: hidden;
       }
