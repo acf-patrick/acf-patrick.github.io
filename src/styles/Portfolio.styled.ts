@@ -1,11 +1,25 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import BaseSection from "../styles/Section";
 import { device } from "./Breakpoints";
 
-export default styled(BaseSection)`
+const Appearing = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+`;
+
+export default styled(BaseSection)<{inView: boolean}>`
   .container {
+    animation: ${({ inView }) => inView && Appearing} 1s 300ms both;
+    opacity: 0;
+
     width: 30%;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 
     @media ${device.lg} {
       width: 60%;

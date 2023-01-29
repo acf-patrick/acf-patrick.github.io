@@ -8,7 +8,19 @@ const Inner = styled(BaseContainer)`
   position: relative;
 `;
 
-const Photo = styled.div`
+const Appearing = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const Photo = styled.div<{ inView: boolean }>`
+  animation: ${({ inView }) => inView && Appearing} 1s 300ms both;
+  opacity: 0;
+
   background: linear-gradient(
     ${({ theme }) => theme.colors.primary},
     transparent

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import BaseContainer from "./Container";
 import { device } from "./Breakpoints";
+import { keyframes } from "styled-components";
 
 const Container = styled(BaseContainer)`
   display: grid;
@@ -46,7 +47,22 @@ const Container = styled(BaseContainer)`
   }
 `;
 
-const CardStyled = styled.article`
+const Appearing = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+`;
+
+const CardStyled = styled.article<{ inView: boolean; index: number }>`
+  animation: ${({ inView }) => inView && Appearing} 1s
+    ${({ index }) => index * 300}ms both;
+  opacity: 0;
+
   background: ${({ theme }) => theme.colors.backgroundVariant};
   padding: 1rem;
   border-radius: 1rem;

@@ -6,17 +6,21 @@ import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import Button from "../styles/Button";
+import { useInView } from "react-intersection-observer";
 
 interface ICardProps {
   icon: any;
   type: String;
   value: String;
   link: String;
+  index?: number;
 }
 
-function Card({ icon: Icon, type, value, link }: ICardProps) {
+function Card({ icon: Icon, type, value, link, index }: ICardProps) {
+  const { ref, inView } = useInView();
+
   return (
-    <CardStyled>
+    <CardStyled ref={ref} inView={inView} index={index!}>
       <Icon />
       <h4>{type}</h4>
       <h5>{value}</h5>
@@ -49,11 +53,16 @@ function Contact() {
     },
   ];
 
-  const form = useRef<any>();
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    emailjs.sendForm("service_vtygqjr", "template_853xrjr", form.current, "sHC00pbDmBMGpZxco");
+    emailjs.sendForm(
+      "service_vtygqjr",
+      "template_853xrjr",
+      form.current!,
+      "sHC00pbDmBMGpZxco"
+    );
   };
 
   return (
@@ -63,9 +72,10 @@ function Contact() {
 
       <Container>
         <div>
-          {contacts.map((contact, index) => (
-            <Card {...contact} key={index} />
-          ))}
+          {contacts.map((contact, index) => {
+            contact.index = index;
+            return <Card {...contact} key={index} />;
+          })}
         </div>
         <form ref={form} onSubmit={sendEmail}>
           <input

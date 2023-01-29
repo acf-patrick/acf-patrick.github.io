@@ -12,6 +12,7 @@ import {
 } from "../styles/Header.styled";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { ActiveLinkContext } from "../App";
+import { useInView } from "react-intersection-observer";
 
 function Header() {
   const LightTitle = styled.h5`
@@ -19,6 +20,8 @@ function Header() {
   `;
 
   const [activeLink, setActiveLink] = useContext(ActiveLinkContext);
+
+  const { ref, inView } = useInView();
 
   return (
     <Container>
@@ -54,7 +57,7 @@ function Header() {
             <FaFacebook />
           </a>
         </Socials>
-        <Photo>
+        <Photo ref={ref} inView={inView}>
           <img src={photo} alt="photo" />
         </Photo>
       </Inner>

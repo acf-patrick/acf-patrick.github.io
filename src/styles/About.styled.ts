@@ -13,7 +13,21 @@ const Container = styled(BaseContainer)`
   }
 `;
 
-const Photo = styled.div`
+const Appearing = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+`;
+
+const Photo = styled.div<{ inView: boolean }>`
+  animation: ${({ inView }) => inView && Appearing} 1s 300ms both;
+
+  opacity: 0;
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 2rem;
@@ -111,7 +125,11 @@ const Content = styled.div`
   }
 `;
 
-const CardStyled = styled.article`
+const CardStyled = styled.article<{ inView: boolean; index?: number }>`
+  animation: ${({ inView }) => inView && Appearing} 1s
+    ${({ index }) => 500 + (index! + 1) * 200}ms both;
+
+  opacity: 0;
   background: ${({ theme }) => theme.colors.backgroundVariant};
   border: 1px solid transparent;
   border-radius: 1rem;

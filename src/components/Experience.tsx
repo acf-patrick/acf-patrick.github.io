@@ -1,15 +1,19 @@
 import Section from "../styles/Section";
 import { BsCheck2Circle } from "react-icons/bs";
 import { Container, CardStyled } from "../styles/Experience.styled";
+import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface ICardProps {
   title: String;
   skills: String[][];
+  index?: number;
 }
 
-function Card({ title, skills }: ICardProps) {
+function Card({ title, skills, index }: ICardProps) {
+  const { ref, inView } = useInView();
   return (
-    <CardStyled>
+    <CardStyled ref={ref} inView={inView} index={index!}>
       <h3>{title}</h3>
       <div>
         {skills.map((skill, index) => (
@@ -31,28 +35,28 @@ function Experience() {
     {
       title: "frontend development",
       skills: [
-        [ "Angular", "intermediate" ],
-        [ "React", "experienced" ],
-        [ "Styled-components", "intermediate" ]
-      ]
+        ["Angular", "intermediate"],
+        ["React", "experienced"],
+        ["Styled-components", "intermediate"],
+      ],
     },
     {
       title: "backend development",
       skills: [
-        [ "Node JS", "intermediate" ],
-        [ "MongoDB", "intermediate" ],
-        [ "MySQL", "intermediate" ],
-        [ "NestJS", "intermediate" ]
-      ]
+        ["Node JS", "intermediate"],
+        ["MongoDB", "intermediate"],
+        ["MySQL", "intermediate"],
+        ["NestJS", "intermediate"],
+      ],
     },
     {
       title: "computer aided design",
       skills: [
-        [ "C++ ObjectArx", "experienced" ],
-        [ "AutoCAD", "experienced" ],
-        [ "QGIS", "experienced" ]
-      ]
-    }
+        ["C++ ObjectArx", "experienced"],
+        ["AutoCAD", "experienced"],
+        ["QGIS", "experienced"],
+      ],
+    },
   ];
 
   return (
@@ -61,9 +65,10 @@ function Experience() {
       <h2>My Experience</h2>
 
       <Container>
-        {skills.map((skill, index) => (
-          <Card {...skill} key={index} />
-        ))}
+        {skills.map((skill, index) => {
+          skill.index = index;
+          return <Card {...skill} key={index} />;
+        })}
       </Container>
     </Section>
   );

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import BaseContainer from "./Container";
 import { device } from "./Breakpoints";
 
@@ -17,7 +17,22 @@ const Container = styled(BaseContainer)`
   }
 `;
 
-const CardStyled = styled.div`
+const Appearing = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+`;
+
+const CardStyled = styled.div<{ inView: boolean; index: number }>`
+  animation: ${({ inView }) => inView && Appearing} 1s
+    ${({ index }) => index * 300}ms both;
+  opacity: 0;
+
   background: ${({ theme }) => theme.colors.backgroundVariant};
   padding: 2rem 4rem;
   border-radius: 2rem;
@@ -76,9 +91,9 @@ const CardStyled = styled.div`
   }
 
   @media ${device.md} {
-      width: 100%;
-      padding: 2rem 1rem;
-    }
+    width: 100%;
+    padding: 2rem 1rem;
+  }
 `;
 
 export { Container, CardStyled };

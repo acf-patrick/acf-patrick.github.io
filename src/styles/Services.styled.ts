@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import BaseContainer from "./Container";
 import { device } from "./Breakpoints";
 
@@ -18,7 +18,22 @@ const Container = styled(BaseContainer)`
   }
 `;
 
-const CardStyled = styled.article`
+const Appearing = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+`;
+
+const CardStyled = styled.article<{ inView: boolean; index: number }>`
+  animation: ${({ inView }) => inView && Appearing} 1s
+    ${({ index }) => index * 300}ms both;
+  opacity: 0;
+
   background: ${({ theme }) => theme.colors.backgroundVariant};
   border-radius: 0 0 2rem 2rem;
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -38,7 +53,7 @@ const CardStyled = styled.article`
     box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
 
     h3 {
-      color: ${({theme}) => theme.colors.background};
+      color: ${({ theme }) => theme.colors.background};
       font-size: 1rem;
       text-align: center;
     }

@@ -1,5 +1,6 @@
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useInView } from "react-intersection-observer";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -42,15 +43,18 @@ function Portfolio() {
     },
     {
       title: "Haizara",
-      description: "React integration of a E-learning website designed by © Educrat",
+      description:
+        "React integration of a E-learning website designed by © Educrat",
       image: haizara,
       github: "https://github.com/acf-patrick/haizara",
       demoLink: "https://acf-patrick.github.io/haizara/",
     },
   ];
 
+  const { ref, inView } = useInView({ threshold: 0.5 });
+
   return (
-    <PortfolioStyled>
+    <PortfolioStyled ref={ref} inView={inView}>
       <h5>My recent work</h5>
       <h2>Portfolio</h2>
 
@@ -61,25 +65,27 @@ function Portfolio() {
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        {portfolios.map(({ image, title, description, github, demoLink }, index) => (
-          <SwiperSlide key={index} className="card">
-            <div>
-              <img src={`${image ? image : defaultImage}`} alt="portfolio" />
-            </div>
-            <h3>{title}</h3>
-            {description && <p>{description}</p>}
-            <div>
-              <Button href={`${github}`} target="_blank">
-                Github
-              </Button>
-              {demoLink && (
-                <Button primary href={`${demoLink}`} target="_blank">
-                  Demo
+        {portfolios.map(
+          ({ image, title, description, github, demoLink }, index) => (
+            <SwiperSlide key={index} className="card">
+              <div>
+                <img src={`${image ? image : defaultImage}`} alt="portfolio" />
+              </div>
+              <h3>{title}</h3>
+              {description && <p>{description}</p>}
+              <div>
+                <Button href={`${github}`} target="_blank">
+                  Github
                 </Button>
-              )}
-            </div>
-          </SwiperSlide>
-        ))}
+                {demoLink && (
+                  <Button primary href={`${demoLink}`} target="_blank">
+                    Demo
+                  </Button>
+                )}
+              </div>
+            </SwiperSlide>
+          )
+        )}
       </Swiper>
     </PortfolioStyled>
   );

@@ -7,16 +7,20 @@ import { GiFamilyTree } from "react-icons/gi";
 import { GrReactjs } from "react-icons/gr";
 import Image from "../assets/images/photo-2.jpeg";
 import Button from "../styles/Button";
+import { useInView } from "react-intersection-observer";
 
-interface ICardProps {
+type ICardProps = {
   icon: any;
   title: String;
   description?: String;
-}
+  index?: number;
+};
 
-function Card({ icon, title, description }: ICardProps) {
+function Card({ icon, title, description, index }: ICardProps) {
+  const { ref, inView } = useInView();
+
   return (
-    <CardStyled>
+    <CardStyled index={index} ref={ref} inView={inView}>
       {icon}
       <h5>{title}</h5>
       <small>{description}</small>
@@ -34,17 +38,19 @@ function About() {
     {
       icon: <GrReactjs />,
       title: "Techno",
-      description: "agnostic"
+      description: "agnostic",
     },
     {
       icon: <GiFamilyTree />,
       title: "Algorithm",
-      description: "optimizer"
+      description: "optimizer",
     },
   ];
 
   // active link state
   const [activeLink, setActiveLink] = useContext(ActiveLinkContext);
+
+  const { ref, inView } = useInView();
 
   return (
     <Section id="about">
@@ -52,7 +58,7 @@ function About() {
       <h2>About Me</h2>
 
       <Container>
-        <Photo>
+        <Photo inView={inView} ref={ref}>
           <div>
             <img src={Image} alt="photo" />
           </div>
@@ -60,9 +66,10 @@ function About() {
 
         <Content>
           <div>
-            {cards.map((card, index) => (
-              <Card {...card} key={index} />
-            ))}
+            {cards.map((card, index) => {
+              card.index = index;
+              return <Card {...card} key={index} />;
+            })}
           </div>
           <p>
             Hi! My name is Patrick Miharisoa. I really like algorithmic
