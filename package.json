@@ -1,12 +1,12 @@
 {
   "name": "portfolio",
   "homepage": "https://acf-patrick.github.io",
-  "predeploy": "yarn build",
-  "deploy": "gh-pages -d build",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
