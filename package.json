@@ -1,0 +1,32 @@
+{
+  "name": "portfolio",
+  "homepage": "https://acf-patrick.github.io",
+  "predeploy": "yarn build",
+  "deploy": "gh-pages -d build",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/styled-components": "^5.1.26",
+    "emailjs-com": "^3.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-intersection-observer": "^9.4.1",
+    "styled-components": "^5.3.6",
+    "swiper": "^8.4.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^3.0.0",
+    "gh-pages": "^5.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  }
+}
