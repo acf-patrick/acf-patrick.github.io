@@ -90,6 +90,7 @@ const Container = styled.header`
 
   @media ${device.lg} {
     height: 68vh;
+    min-height: 640px;
   }
 
   @media ${device.md} {
