@@ -5,49 +5,75 @@ import { useInView } from "react-intersection-observer";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import tilesAdventure from "../assets/images/portfolios/tiles-adventure.png";
-import flappyBird from "../assets/images/portfolios/flappy-bird.png";
-import haizara from "../assets/images/portfolios/haizara.jpg";
-import chip8 from "../assets/images/portfolios/chip-8.png";
-
 import PortfolioStyled from "../styles/Portfolio.styled";
-import defaultImage from "../assets/images/default.png";
 import Button from "../styles/Button";
 
 interface ICardProps {
-  image?: String;
-  title: String;
-  description?: String;
-  github: String;
-  demoLink?: String;
+  image?: string;
+  title: string;
+  description: string;
+  github: string;
+  demoLink?: string;
+  topics: string[];
 }
 
 function Portfolio() {
   const portfolios: ICardProps[] = [
     {
-      title: "Tiles Adventure",
-      description: "2D platformer game written in C++",
-      image: tilesAdventure,
-      github: "https://github.com/acf-patrick/Tiles-Adventure",
+      title: "Mozika",
+      description:
+        "Music player for desktop, built for Windows only for the time being. This was my first project with Rust 🦀.",
+      github: "https://github.com/acf-patrick/music-player",
+      image: "/assets/images/portfolios/music-player.png",
+      topics: ["Rust", "React", "Tauri", "Styled Components"],
     },
     {
-      title: "Flappy Bird",
-      description: "C++ implementation of the popular mobile game",
-      image: flappyBird,
-      github: "https://github.com/acf-patrick/flappy-bird-sdl",
+      title: "Chat application",
+      description:
+        "Small chat application ↔️ project written with React and Actix-web. The design is inspired by Socket.IO and uses Actix's actor pattern",
+      github: "https://github.com/acf-patrick/rust_web_socket",
+      image: "/assets/images/portfolios/chat-app.png",
+      topics: ["Rust", "React", "Actix", "Web Socket"],
     },
     {
-      title: "Chip-8 Emulator",
-      image: chip8,
-      github: "https://github.com/acf-patrick/chip-8-interpreter",
+      title: "Morpion-web",
+      description:
+        "Common thing when starting with web-socket, building a Tic-tac-toe ⭕❌ game. Because why not ?",
+      github: "https://github.com/acf-patrick/morpion-web",
+      image: "/assets/images/portfolios/tic-tac-toe.png",
+      demoLink: "https://morpion-web.netlify.app",
+      topics: ["React", "ExpressJs", "Socket.io", "Styled Components"],
     },
     {
       title: "Haizara",
       description:
         "React integration of a E-learning website designed by © Educrat",
-      image: haizara,
+      image: "/assets/images/portfolios/haizara.jpg",
       github: "https://github.com/acf-patrick/haizara",
       demoLink: "https://acf-patrick.github.io/haizara/",
+      topics: ["React", "SASS"],
+    },
+    {
+      title: "Chip-8 Emulator",
+      description:
+        "Chip-8 emulator written in C++. Rendering is handled by SDL.",
+      image: "/assets/images/portfolios/chip-8.png",
+      github: "https://github.com/acf-patrick/chip-8-interpreter",
+      topics: ["C++", "Emulator"],
+    },
+    {
+      title: "Tiles Adventure",
+      description: "2D platformer game written in C++",
+      image: "/assets/images/portfolios/tiles-adventure.png",
+      github: "https://github.com/acf-patrick/Tiles-Adventure",
+      topics: ["C++", "Game"],
+    },
+    {
+      title: "Flappy Bird",
+      description: "C++ implementation of the popular mobile game",
+      image: "/assets/images/portfolios/flappy-bird.png",
+      github: "https://github.com/acf-patrick/flappy-bird-sdl",
+      topics: ["C++", "Game"],
     },
   ];
 
@@ -66,22 +92,35 @@ function Portfolio() {
         pagination={{ clickable: true }}
       >
         {portfolios.map(
-          ({ image, title, description, github, demoLink }, index) => (
+          ({ image, title, description, github, demoLink, topics }, index) => (
             <SwiperSlide key={index} className="card">
-              <div>
-                <img src={`${image ? image : defaultImage}`} alt="portfolio" />
+              <div className="image">
+                <img
+                  src={`${image ? image : "/assets/images/default.png"}`}
+                  alt="portfolio"
+                />
               </div>
-              <h3>{title}</h3>
-              {description && <p>{description}</p>}
-              <div>
-                <Button href={`${github}`} target="_blank">
-                  Github
-                </Button>
-                {demoLink && (
-                  <Button primary href={`${demoLink}`} target="_blank">
-                    Demo
+              <div className="content">
+                <main>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+
+                  <div className="labels">
+                    {topics.map((topic, i) => (
+                      <span key={i}>{topic}</span>
+                    ))}
+                  </div>
+                </main>
+                <div className="buttons">
+                  <Button href={`${github}`} target="_blank">
+                    Github
                   </Button>
-                )}
+                  {demoLink && (
+                    <Button primary href={`${demoLink}`} target="_blank">
+                      Demo
+                    </Button>
+                  )}
+                </div>
               </div>
             </SwiperSlide>
           )

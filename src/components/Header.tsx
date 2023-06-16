@@ -1,6 +1,4 @@
 import { useContext } from "react";
-import CV from "../assets/resume.pdf";
-import photo from "../assets/images/photo-1.png";
 import Button from "../styles/Button";
 import styled from "styled-components";
 import {
@@ -30,7 +28,7 @@ function Header() {
         <h1>Patrick Miharisoa</h1>
         <LightTitle>Software Developer</LightTitle>
         <Buttons>
-          <Button href={CV} download="MIHARISOA Tojoniaina Patrick.pdf">
+          <Button href="/assets/resume.pdf" download="MIHARISOA Tojoniaina Patrick.pdf">
             Download CV
           </Button>
           <Button
@@ -58,7 +56,7 @@ function Header() {
           </a>
         </Socials>
         <Photo ref={ref} inView={inView}>
-          <img src={photo} alt="photo" />
+          <img src="/assets/images/photo-1.png" alt="photo" />
         </Photo>
       </Inner>
     </Container>

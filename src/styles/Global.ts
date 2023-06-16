@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import backgroundImage from "../assets/images/background.png";
-import poppinsFont from "../assets/fonts/Poppins-Light.ttf";
+
+const backgroundImage = "/assets/images/background.png";
+const poppinsFont = "/assets/fonts/Poppins-Light.ttf";
 
 export default createGlobalStyle<{ theme: any }>`
   @font-face {

@@ -1,7 +1,6 @@
 import Section from "../styles/Section";
 import { BsCheck2Circle } from "react-icons/bs";
 import { Container, CardStyled } from "../styles/Experience.styled";
-import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 interface ICardProps {

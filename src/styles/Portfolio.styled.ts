@@ -13,24 +13,109 @@ const Appearing = keyframes`
   }
 `;
 
-export default styled(BaseSection)<{inView: boolean}>`
+export default styled(BaseSection)<{ inView: boolean }>`
   .container {
     animation: ${({ inView }) => inView && Appearing} 1s 300ms both;
     opacity: 0;
+    border-radius: 5px;
 
-    width: 30%;
+    max-width: 720px;
     padding-bottom: 1rem;
 
-    @media ${device.lg} {
-      width: 60%;
-    }
-
     @media ${device.md} {
-      width: 90%;
+      width: 95%;
+    }
+  }
+
+  .labels {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    span {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+      background: ${({ theme }) => theme.colors.background};
+      border-radius: 20px;
+      cursor: default;
+      box-shadow: none;
+      transition: box-shadow 500ms;
+
+      &:hover {
+        box-shadow: 0 0 2px white;
+      }
     }
   }
 
   .card {
+    @media ${device.md} {
+      flex-wrap: wrap;
+      gap: 0;
+
+      .image {
+        padding: 5px;
+      }
+
+      img {
+        max-width: 280px;
+      }
+
+      main {
+        padding-left: 2rem;
+      }
+    }
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    background: ${({ theme }) => theme.colors.backgroundVariant};
+
+    .image {
+      padding: 15px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      padding-bottom: 1rem;
+      padding-right: 1rem;
+      gap: 1rem;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+
+    p {
+      color: ${({ theme }) => theme.colors.primaryVariant};
+      padding-right: 1rem;
+      text-align: left;
+    }
+
+    img {
+      max-width: 320px;
+      border-radius: 5px;
+      aspect-ratio: 1;
+      object-fit: contain;
+      transition: ${({ theme }) => theme.transition};
+
+      &:hover {
+        transform: scale(1.125);
+      }
+    }
+  }
+
+  /* .card {
     background: ${({ theme }) => theme.colors.backgroundVariant};
     padding: 1rem;
     border-radius: 2rem;
@@ -72,5 +157,5 @@ export default styled(BaseSection)<{inView: boolean}>`
         transform: scale(1.125);
       }
     }
-  }
+  } */
 `;

@@ -5,7 +5,6 @@ import Section from "../styles/Section";
 import { FaAward } from "react-icons/fa";
 import { GiFamilyTree } from "react-icons/gi";
 import { GrReactjs } from "react-icons/gr";
-import Image from "../assets/images/photo-2.jpeg";
 import Button from "../styles/Button";
 import { useInView } from "react-intersection-observer";
 
@@ -60,7 +59,7 @@ function About() {
       <Container>
         <Photo inView={inView} ref={ref}>
           <div>
-            <img src={Image} alt="photo" />
+            <img src="/assets/images/photo-2.jpeg" alt="photo" />
           </div>
         </Photo>
 
