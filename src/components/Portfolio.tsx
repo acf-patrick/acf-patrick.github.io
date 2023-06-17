@@ -25,7 +25,7 @@ function Portfolio() {
         "Music player for desktop, built for Windows only for the time being. This was my first project with Rust 🦀.",
       github: "https://github.com/acf-patrick/music-player",
       image: "/assets/images/portfolios/music-player.png",
-      topics: ["Rust", "React", "Tauri", "Styled Components"],
+      topics: ["Rust", "React", "Tauri", "Actix", "Styled Components"],
     },
     {
       title: "Chat application",
