@@ -28,6 +28,13 @@ function Portfolio() {
       topics: ["Rust", "React", "Tauri", "Actix", "Styled Components"],
     },
     {
+      title: "Spotifew",
+      description: "Web Application built with Spotify API. This project really helped me to understand OAuth.",
+      github: "https://github.com/acf-patrick/spotifew",
+      image: "/assets/images/portfolios/spotifew.png",
+      topics: ["React", "ExpressJs", "OAuth", "API"]
+    },
+    {
       title: "Chat application",
       description:
         "Small chat application ↔️ project written with React and Actix-web. The design is inspired by Socket.IO and uses Actix's actor pattern",
