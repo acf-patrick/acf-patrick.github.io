@@ -31,6 +31,7 @@ function Portfolio() {
       title: "Spotifew",
       description: "Web Application built with Spotify API. This project really helped me to understand OAuth.",
       github: "https://github.com/acf-patrick/spotifew",
+      demoLink: "https://spotifew.netlify.app",
       image: "/assets/images/portfolios/spotifew.png",
       topics: ["React", "ExpressJs", "OAuth", "API"]
     },
