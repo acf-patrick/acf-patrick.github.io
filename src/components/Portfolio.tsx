@@ -29,11 +29,21 @@ function Portfolio() {
     },
     {
       title: "Spotifew",
-      description: "Web Application built with Spotify API. This project really helped me to understand OAuth.",
+      description:
+        "Web Application built with Spotify API. This project really helped me to understand OAuth.",
       github: "https://github.com/acf-patrick/spotifew",
       demoLink: "https://spotifew.netlify.app",
       image: "/assets/images/portfolios/spotifew.png",
-      topics: ["React", "ExpressJs", "OAuth", "API"]
+      topics: ["React", "ExpressJs", "OAuth", "API"],
+    },
+    {
+      title: "Family Guy",
+      description:
+        "Fullstack application built with Next.js made for all Family guy fans.",
+      github: "https://github.com/acf-patrick/family-guy",
+      demoLink: "https://family-guy-app.vercel.app",
+      image: "/assets/images/portfolios/family-guy.png",
+      topics: ["Next.js", "Vercel"],
     },
     {
       title: "Chat application",
