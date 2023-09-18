@@ -37,6 +37,14 @@ function Portfolio() {
       topics: ["React", "ExpressJs", "OAuth", "API"],
     },
     {
+      title: "Text extractor",
+      description:
+        "A desktop application built around Tesseract that allows you to extract text from an image.",
+      github: "https://github.com/acf-patrick/text-recognition",
+      image: "/assets/images/portfolios/text-recognition.png",
+      topics: ["Tauri", "React", "Tesseract"],
+    },
+    {
       title: "Family Guy",
       description:
         "Fullstack application built with Next.js made for all Family guy fans.",
