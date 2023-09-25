@@ -37,6 +37,14 @@ function Portfolio() {
       topics: ["React", "ExpressJs", "OAuth", "API"],
     },
     {
+      title: "Streamly",
+      description: "Web platform for video streaming. Users can stream videos and manage theirs.",
+      github: "https://github.com/acf-patrick/nest-react-stream-app",
+      demoLink: "https://streamly-oti2.onrender.com",
+      image: "/assets/images/portfolios/streamly.png",
+      topics: ["NestJs", "React", "Multer"]
+    },
+    {
       title: "Text extractor",
       description:
         "A desktop application built around Tesseract that allows you to extract text from an image.",
