@@ -28,21 +28,31 @@ function Portfolio() {
       topics: ["Rust", "React", "Tauri", "Actix", "Styled Components"],
     },
     {
-      title: "Spotifew",
+      title: "SAGE Pharmacy",
       description:
-        "Web Application built with Spotify API. This project really helped me to understand OAuth.",
-      github: "https://github.com/acf-patrick/spotifew",
-      demoLink: "https://spotifew.netlify.app",
-      image: "/assets/images/portfolios/spotifew.png",
-      topics: ["React", "ExpressJs", "OAuth", "API"],
+        "SAGE application for Pharmacy management. Learned a lot of things from this project, such as AWS, app containerization and github workflow.",
+      github: "https://github.com/acf-patrick/SAGE-pharmacy",
+      demoLink: "http://3.19.232.21/",
+      image: "/assets/images/portfolios/sage-pharmacy.png",
+      topics: ["React", "Nest", "Rust", "Docker"],
     },
     {
       title: "Streamly",
-      description: "Web platform for video streaming. Users can stream videos and manage theirs.",
+      description:
+        "Web platform for video streaming. Users can stream videos and manage theirs.",
       github: "https://github.com/acf-patrick/nest-react-stream-app",
       demoLink: "https://streamly-oti2.onrender.com",
       image: "/assets/images/portfolios/streamly.png",
-      topics: ["NestJs", "React", "Multer"]
+      topics: ["NestJs", "React", "Multer"],
+    },
+    {
+      title: "Spotifew",
+      description:
+        "Web Application built with Spotify API. This project helped me to understand OAuth.",
+      github: "https://github.com/acf-patrick/spotifew",
+      demoLink: "https://spotifew.netlify.app",
+      image: "/assets/images/portfolios/spotifew.png",
+      topics: ["React", "ExpressJs", "OAuth"],
     },
     {
       title: "Text extractor",
