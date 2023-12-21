@@ -18,6 +18,7 @@ interface ICardProps {
 }
 
 function Portfolio() {
+  const { ref, inView } = useInView({ threshold: 0.5 });
   const portfolios: ICardProps[] = [
     {
       title: "Mozika",
@@ -120,8 +121,6 @@ function Portfolio() {
       topics: ["C++", "Game"],
     },
   ];
-
-  const { ref, inView } = useInView({ threshold: 0.5 });
 
   return (
     <PortfolioStyled ref={ref} inView={inView}>
