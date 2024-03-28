@@ -42,18 +42,18 @@ function Experience() {
     {
       title: "backend development",
       skills: [
-        ["Node JS", "intermediate"],
-        ["MongoDB", "intermediate"],
-        ["MySQL", "intermediate"],
-        ["NestJS", "intermediate"],
+        ["Node JS", "experienced"],
+        ["Rust", "experienced"],
+        ["PostgreSQL", "experienced"],
+        ["NestJS", "experienced"],
       ],
     },
     {
-      title: "computer aided design",
+      title: "desktop development",
       skills: [
-        ["C++ ObjectArx", "experienced"],
-        ["AutoCAD", "experienced"],
-        ["QGIS", "experienced"],
+        ["Qt C++", "experienced"],
+        ["Rust", "experienced"],
+        ["Tauri Rust", "experienced"],
       ],
     },
   ];

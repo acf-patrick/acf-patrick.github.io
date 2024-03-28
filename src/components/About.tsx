@@ -32,7 +32,7 @@ function About() {
     {
       icon: <FaAward />,
       title: "Experience",
-      description: "1 Years Working",
+      description: "2 Years Working",
     },
     {
       icon: <GrReactjs />,
@@ -47,7 +47,7 @@ function About() {
   ];
 
   // active link state
-  const [activeLink, setActiveLink] = useContext(ActiveLinkContext);
+  const [_, setActiveLink] = useContext(ActiveLinkContext);
 
   const { ref, inView } = useInView();
 
@@ -71,12 +71,13 @@ function About() {
             })}
           </div>
           <p>
-            Hi! My name is Patrick Miharisoa. I really like algorithmic
-            challenges and problem solving, that's why I work as a C++ developer
-            supporting Computer Aided Designers using AutoCAD and GstarCAD
-            softwares, providing them the tools that will boost their
-            productivity and spare their times. On the other hand, I am also
-            working on Game, Web and Mobile development right now.
+            Hi! My name is Patrick Miharisoa. I am interested in algirthms and
+            problem solving. After one and half year working as a C++ developer,
+            I now work at Corellia. Providing digital solution for various
+            clients regardless of the technology. I like to put on line new
+            technologies such as Rust 🦀. Zero-cost abstraction, memory safety
+            and growing community makes Rust a great choice whether for web or
+            desktop needs.
             <br />
             <Button
               primary
