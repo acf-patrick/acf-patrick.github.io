@@ -28,8 +28,11 @@ function Header() {
         <h1>Patrick Miharisoa</h1>
         <LightTitle>Software Developer</LightTitle>
         <Buttons>
-          <Button href="/assets/resume.pdf" download="MIHARISOA Tojoniaina Patrick.pdf">
-            Download CV
+          <Button
+            target="_blank"
+            href="https://patrick-miharisoa-resume.vercel.app"
+          >
+            View CV
           </Button>
           <Button
             href="#contact"
