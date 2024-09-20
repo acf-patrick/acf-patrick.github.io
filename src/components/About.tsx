@@ -32,7 +32,7 @@ function About() {
     {
       icon: <FaAward />,
       title: "Experience",
-      description: "2 Years Working",
+      description: "2.5 Years Working",
     },
     {
       icon: <GrReactjs />,
