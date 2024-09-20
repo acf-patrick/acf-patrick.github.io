@@ -71,13 +71,13 @@ function About() {
             })}
           </div>
           <p>
-            Hi! My name is Patrick Miharisoa. I am interested in algirthms and
+            Hi! My name is Patrick Miharisoa. I am interested in algorithms and
             problem solving. After one and half year working as a C++ developer,
-            I now work at Corellia. Providing digital solution for various
+            I worked as a Rust developer, providing digital solution for various
             clients regardless of the technology. I like to put on line new
             technologies such as Rust 🦀. Zero-cost abstraction, memory safety
             and growing community makes Rust a great choice whether for web or
-            desktop needs.
+            desktop needs. Now I work as a C++ developer at Astek Madagascar.
             <br />
             <Button
               primary
